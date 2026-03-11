@@ -18,6 +18,8 @@
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-color);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
     color: var(--text-main);
     overflow-x: hidden;
     position: relative;
@@ -294,12 +296,11 @@ body {
 }
 
 .project-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(145deg, rgba(30, 20, 45, 0.95), rgba(15, 10, 25, 0.98));
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 2rem;
-    /* transition for 3D tilt needs to be fast on transform, smooth on others */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
     transition: transform 0.1s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -419,20 +420,29 @@ body {
     gap: 4px;
 }
 
-/* Loading Spinner */
-.loading-spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(157, 78, 221, 0.3);
-    border-radius: 50%;
-    border-top-color: var(--primary);
-    animation: spin 1s ease-in-out infinite;
-    margin: 2rem auto;
-    grid-column: 1 / -1;
+/* Loading Skeleton */
+.skeleton-card {
+    background: linear-gradient(145deg, rgba(30, 20, 45, 0.5), rgba(15, 10, 25, 0.5));
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    height: 280px;
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.skeleton-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    animation: skeleton-shimmer 1.5s infinite;
+}
+
+@keyframes skeleton-shimmer {
+    100% { left: 100%; }
 }
 
 /* Back to Top Button */

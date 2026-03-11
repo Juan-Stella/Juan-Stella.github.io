@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=ultra2026">
+    <link rel="stylesheet" href="style.css?v=hyper2026">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Marked.js for parsing Markdown to HTML -->
@@ -24,7 +24,7 @@
     <header class="hero">
         <div class="container glass-panel">
             <div class="hero-content">
-                <img id="profile-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Profile Picture" class="profile-pic">
+                <img id="profile-img" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Profile Picture" class="profile-pic" loading="lazy">
                 <h1 id="profile-name" class="typing-text">Cargando perfil...</h1>
                 <p id="profile-bio" class="bio">Desarrollador de Software | Apasionado por la tecnología</p>
                 <div class="social-links">
@@ -58,8 +58,13 @@
         <div class="container">
             <h2 class="section-title">Mis Proyectos</h2>
             <div id="projects-grid" class="projects-grid">
-                <!-- Project cards will be injected here -->
-                <div class="loading-spinner"></div>
+                <!-- Skeleton Loaders for instant perceived performance -->
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
             </div>
         </div>
     </main>
@@ -86,6 +91,6 @@
         <p>&copy; <span id="year"></span> | Creado con ❤️ y CSS Vanilla.</p>
     </footer>
 
-    <script src="script.js?v=ultra2026"></script>
+    <script src="script.js?v=hyper2026"></script>
 </body>
 </html>
