@@ -52,11 +52,11 @@ const localProjectData = {
     },
     "IA2": {
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
-        languages: ["Jupyter Notebook", "Python", "Deep Learning"],
+        languages: ["Python", "Deep Learning"],
         shortDescription: "Repositorio principal de prácticas avanzadas de IA. Incluye experimentación con redes neuronales y machine learning.",
         fullText: `
             <h2>Inteligencia Artificial 2</h2>
-            <p>Repositorio contenedor de las prácticas avanzadas cursadas en la asignatura de IA2, desarrollado principalmente en Jupyter Notebooks.</p>
+            <p>Repositorio contenedor de las prácticas avanzadas cursadas en la asignatura de IA2.</p>
             <p>Incluye implementaciones prácticas y experimentación activa con distintos modelos de redes neuronales, machine learning y técnicas analíticas de datos.</p>
         `
     },
@@ -75,7 +75,7 @@ const localProjectData = {
     },
     "Control-y-Sistemas": {
          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-         languages: ["C", "Microcontroladores", "Hardware Dev"],
+         languages: ["C", "Microcontroladores"],
          shortDescription: "Algoritmos robustos en lenguaje C para el control de sistemas electrónicos y hardware de microcontroladores.",
          fullText: `
             <h2>Control y Sistemas</h2>
