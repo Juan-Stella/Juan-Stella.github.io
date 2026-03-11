@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchGitHubProfile();
     fetchGitHubProjects();
     setupModalListeners();
+    setupBackToTop();
 });
 
 async function fetchGitHubProfile() {
@@ -154,12 +155,8 @@ async function fetchGitHubProjects() {
         }
 
         originalRepos.forEach((repo, index) => {
-            // Adding a slight animation delay for a cascading entrance effect
-            const delay = index * 0.1;
-            
             const card = document.createElement('div');
-            card.className = 'project-card';
-            card.style.animation = `fadeInUp 0.6s ease ${delay}s backwards`;
+            card.className = 'project-card reveal';
 
             // Format date
             const updateDate = new Date(repo.updated_at).toLocaleDateString('es-ES', {
@@ -220,6 +217,10 @@ async function fetchGitHubProjects() {
                 }
             });
         });
+
+        // Initialize new UX features
+        setupScrollReveal();
+        setup3DTilt(document.querySelectorAll('.project-card'));
 
     } catch (error) {
         console.error('Error fetching repos:', error);
@@ -308,5 +309,68 @@ function setupModalListeners() {
         if (e.key === 'Escape' && modal.classList.contains('active')) {
             closeModal();
         }
+    });
+}
+
+// ==========================================
+// PREMIUM UX FEATURES
+// ==========================================
+
+function setupBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            btn.classList.add('visible');
+        } else {
+            btn.classList.remove('visible');
+        }
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+function setupScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+    revealElements.forEach(el => observer.observe(el));
+}
+
+function setup3DTilt(cards) {
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            // Ignore if we are hovering over a button
+            if (e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a' || e.target.closest('.view-details-btn')) {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1.02, 1.02, 1.02)`;
+                return;
+            }
+
+            const rect = card.getBoundingClientRect();
+            // Calculate center point of the card
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            // Calculate rotation based on distance from center
+            const rotateX = (y / rect.height) * -15; // Max 15 deg
+            const rotateY = (x / rect.width) * 15;   // Max 15 deg
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            // Reset to default on leave
+            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
     });
 }

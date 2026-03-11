@@ -173,6 +173,60 @@ body {
     margin-right: 8px;
 }
 
+/* Infinite Tech Marquee */
+.tech-marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background: rgba(10, 5, 20, 0.4);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1.5rem 0;
+    position: relative;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.tech-marquee {
+    display: flex;
+    width: fit-content;
+    animation: marquee 25s linear infinite;
+}
+
+.tech-marquee:hover {
+    animation-play-state: paused;
+}
+
+.tech-marquee span {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 0 2.5rem;
+    white-space: nowrap;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: default;
+}
+
+.tech-marquee span i {
+    font-size: 1.5rem;
+    color: var(--secondary);
+}
+
+.tech-marquee span:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+.tech-marquee span:hover i {
+    color: var(--primary);
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Projects Section */
 .projects-section {
     padding: 4rem 0;
@@ -200,6 +254,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2rem;
+    perspective: 1000px;
 }
 
 .project-card {
@@ -208,12 +263,26 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 2rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* transition for 3D tilt needs to be fast on transform, smooth on others */
+    transition: transform 0.1s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* CSS Scroll Reveal Base Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .project-card::before {
@@ -225,10 +294,10 @@ body {
     height: 3px;
     background: linear-gradient(90deg, transparent, var(--secondary), transparent);
     transition: left 0.5s ease;
+    transform: translateZ(10px); /* 3D effect layer */
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.5), 0 0 15px rgba(0, 245, 212, 0.2);
     border-color: rgba(0, 245, 212, 0.3);
 }
@@ -328,6 +397,44 @@ body {
 
 @keyframes spin {
     to { transform: rotate(360deg); }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 50;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.3);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: 0 0 25px var(--primary);
+    transform: scale(1.1) translateY(0);
 }
 
 /* Footer */
