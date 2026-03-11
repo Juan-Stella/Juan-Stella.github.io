@@ -48,7 +48,7 @@ const localProjectData = {
         `
     },
     "IA2": {
-        image: "https://images.unsplash.com/photo-1620712948343-008423671ea2?auto=format&fit=crop&q=80&w=800",
+        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
         languages: ["Jupyter Notebook", "Python", "Deep Learning"],
         fullText: `
             <h2>Inteligencia Artificial 2</h2>
@@ -143,7 +143,8 @@ async function fetchGitHubProjects() {
         console.log("Total repos fetched:", repos.length);
         
         // Filter out forks and hide the portfolio repo itself
-        const originalRepos = repos.filter(repo => !repo.fork && repo.name !== `${GITHUB_USERNAME}.github.io`);
+        const portfolioRepoName = `${GITHUB_USERNAME}.github.io`.toLowerCase();
+        const originalRepos = repos.filter(repo => !repo.fork && repo.name.toLowerCase() !== portfolioRepoName);
         
         console.log("Repos sorted after removing forks and github.io:", originalRepos.map(r=>r.name));
 
