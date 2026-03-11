@@ -1,8 +1,93 @@
-// ==========================================
 // CONFIGURATION
 // ==========================================
 // TODO: Reemplaza 'octocat' con tu nombre de usuario de GitHub real
 const GITHUB_USERNAME = 'Juan-Stella'; 
+
+// Datos manuales para enriquecer el portfolio
+const localProjectData = {
+    "Reconocimiento-de-imagenes": {
+        image: "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&q=80&w=800",
+        fullText: `
+            <h2>Reconocimiento de Imágenes y Planificación</h2>
+            <p>Este proyecto integra varias técnicas de inteligencia artificial y visión por computadora para clasificar y organizar objetos.</p>
+            <h3>Características principales:</h3>
+            <ul>
+                <li><strong>Procesamiento visual:</strong> Pre-procesamiento y extracción de características utilizando algoritmos <code>KNN</code> y <code>KMeans</code>.</li>
+                <li><strong>Planificación lógica:</strong> Utilización del algoritmo <strong>STRIPS</strong> para determinar cómo acomodar cajas conteniendo los objetos detectados.</li>
+                <li><strong>Pathfinding:</strong> Implementación del algoritmo <strong>A*</strong> para encontrar la ruta óptima de transporte de las cajas al área objetivo.</li>
+            </ul>
+        `
+    },
+    "Proyecto-Final-Robotica-1": {
+        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+        fullText: `
+            <h2>Control de Franka Emika Panda</h2>
+            <p>Análisis exhaustivo de cinemática desarrollado en MATLAB para el manipulador robótico de 7 grados de libertad "Franka Emika Panda".</p>
+            <h3>Desarrollo del proyecto:</h3>
+            <ul>
+                <li><strong>Cinemática Directa e Inversa:</strong> Modelado matemático para determinar la posición del efector final y los ángulos necesarios de cada articulación.</li>
+                <li><strong>Análisis Jacobiano:</strong> Estudio de las velocidades, el mapeo de fuerzas y las posibles singularidades mecánicas del brazo.</li>
+                <li><strong>Generación de Trayectorias:</strong> Planificación de movimientos suaves y óptimos en su espacio operativo.</li>
+            </ul>
+        `
+    },
+    "Breast-Cancer-Classification---Logistic-Regression-main": {
+        image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
+        fullText: `
+            <h2>Clasificación de Cáncer de Mama</h2>
+            <p>Implementación desde cero en Python de un modelo predictivo basado en Regresión Logística.</p>
+            <h3>Detalles clave:</h3>
+            <ul>
+                <li>Desarrollo de las matemáticas fundamentales utilizando la función Sigmoide.</li>
+                <li>Entrenamiento iterativo de pesos y sesgos mediante el algoritmo de descenso de gradiente.</li>
+                <li>Evaluación del rendimiento y precisión (Accuracy) del modelo para distinguir tejidos malignos de benignos.</li>
+            </ul>
+        `
+    },
+    "IA2": {
+        image: "https://images.unsplash.com/photo-1620712948343-008423671ea2?auto=format&fit=crop&q=80&w=800",
+        fullText: `
+            <h2>Inteligencia Artificial 2</h2>
+            <p>Repositorio contenedor de las prácticas avanzadas cursadas en la asignatura de IA2, desarrollado principalmente en Jupyter Notebooks.</p>
+            <p>Incluye implementaciones prácticas y experimentación activa con distintos modelos de redes neuronales, machine learning y técnicas analíticas de datos.</p>
+        `
+    },
+    "Automatica-y-maquinas-electricas-final": {
+         image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=800",
+         fullText: `
+            <h2>Automática y Máquinas Eléctricas</h2>
+            <p>Resolución práctica, simulaciones y reporte final correspondientes a la materia Automática y Máquinas Eléctricas.</p>
+            <h3>Herramientas:</h3>
+            <ul>
+                <li><strong>MATLAB / Simulink:</strong> Utilizados en profundidad para modelar, simular plantas físicas y analizar la respuesta en el tiempo y la frecuencia de diversos sistemas de control eléctricos.</li>
+            </ul>
+         `
+    },
+    "Control-y-Sistemas": {
+         image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+         fullText: `
+            <h2>Control y Sistemas</h2>
+            <p>Repositorio enfocado en implementaciones robustas en lenguaje <code>C</code> para el control de sistemas electrónicos y microcontroladores.</p>
+            <p>Los algoritmos desarrollados apuntan a la interacción con hardware de bajo nivel, abarcando desde el procesamiento de señales de sensores en tiempo real hasta la actuación sobre plantas físicas empleando teorías del control clásico.</p>
+         `
+    },
+    "Multiple-Linear-Regression": {
+         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+         fullText: `
+            <h2>Regresión Lineal Múltiple Manual</h2>
+            <p>Mi primera inmersión profunda en el análisis de variables múltiples construyendo un modelo de regresión lineal completamente manual en Python.</p>
+            <p>El objetivo de este proyecto es desglosar la "caja negra" detrás del modelo estadístico, entendiendo paso a paso cómo interaccionan múltiples variables predictoras con el resultado final.</p>
+         `
+    },
+    "Multiple-Linear-with-Scikitlearn": {
+         image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800",
+         fullText: `
+            <h2>Regresión Lineal con Scikit-Learn</h2>
+            <p>El mismo abordaje predictivo abordado en mi regresión lineal manual, pero implementado aprovechando el poder de <strong>scikit-learn</strong>.</p>
+            <p>Este proyecto demuestra la optimización de código, eficiencia escalable, y lo expone preparado para integrarse fácilmente a flujos de trabajo profesionales como cross-validation y data pipelines.</p>
+         `
+    }
+};
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -130,28 +215,36 @@ async function openModal(repoName, repoHtmlUrl, repoHomepage) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
-    try {
-        const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}/readme`);
-        if (!response.ok) {
-            throw new Error('README not found');
-        }
-        
-        const data = await response.json();
-        // GitHub API returns Base64 encoded content
-        // using decodeURIComponent and escape handles special UTF-8 characters properly
-        const markdown = decodeURIComponent(escape(atob(data.content)));
-        
-        // Parse markdown and sanitize HTML
-        const htmlContent = DOMPurify.sanitize(marked.parse(markdown));
-        modalBody.innerHTML = htmlContent;
-        
-    } catch (error) {
-        console.warn('Error fetching README:', error);
+    // Check if we have rich manual data for this project
+    const localData = localProjectData[repoName];
+
+    if (localData) {
+        // Use our beautiful manual data instead of the raw README
         modalBody.innerHTML = `
-            <h2>${repoName}</h2>
-            <p>No se encontró un archivo README detallado para este repositorio, o no se pudo cargar.</p>
-            <p>Puedes visitar el repositorio directamente en GitHub para ver el código fuente y más detalles.</p>
+            ${localData.image ? `<img src="${localData.image}" alt="${repoName} Banner" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem;">` : ''}
+            <div>${localData.fullText}</div>
         `;
+    } else {
+        // Fallback to fetch README from GitHub API for unknown repositories
+        try {
+            const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}/readme`);
+            if (!response.ok) {
+                throw new Error('README not found');
+            }
+            
+            const data = await response.json();
+            const markdown = decodeURIComponent(escape(atob(data.content)));
+            const htmlContent = DOMPurify.sanitize(marked.parse(markdown));
+            modalBody.innerHTML = htmlContent;
+            
+        } catch (error) {
+            console.warn('Error fetching README:', error);
+            modalBody.innerHTML = `
+                <h2>${repoName}</h2>
+                <p>No hay una descripción detallada configurada para este repositorio.</p>
+                <p>Puedes visitar el enlace de GitHub directamente para ver el código fuente y más detalles.</p>
+            `;
+        }
     }
     
     // Set Footer Links
