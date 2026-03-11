@@ -57,6 +57,7 @@ body {
     filter: blur(100px);
     z-index: -1;
     animation: float 20s infinite ease-in-out alternate;
+    will-change: transform;
 }
 
 .orb-1 {
@@ -225,6 +226,7 @@ body {
     display: flex;
     width: fit-content;
     animation: marquee 25s linear infinite;
+    will-change: transform;
 }
 
 .tech-marquee:hover {
