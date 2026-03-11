@@ -54,7 +54,6 @@ body {
 .glow-orb {
     position: fixed;
     border-radius: 50%;
-    filter: blur(100px);
     z-index: -1;
     animation: float 20s infinite ease-in-out alternate;
     will-change: transform;
@@ -63,17 +62,17 @@ body {
 .orb-1 {
     top: -10%;
     left: 10%;
-    width: 40vw;
-    height: 40vw;
-    background: rgba(157, 78, 221, 0.2);
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, rgba(157, 78, 221, 0.2) 0%, rgba(157, 78, 221, 0) 65%);
 }
 
 .orb-2 {
     bottom: -10%;
     right: 10%;
-    width: 30vw;
-    height: 30vw;
-    background: rgba(0, 245, 212, 0.15);
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, rgba(0, 245, 212, 0.15) 0%, rgba(0, 245, 212, 0) 65%);
     animation-delay: -5s;
 }
 

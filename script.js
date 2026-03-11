@@ -357,6 +357,8 @@ function setupScrollReveal() {
 
 function setup3DTilt(cards) {
     cards.forEach(card => {
+        let ticking = false;
+
         card.addEventListener('mousemove', (e) => {
             // Ignore if we are hovering over a button
             if (e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a' || e.target.closest('.view-details-btn')) {
@@ -364,16 +366,22 @@ function setup3DTilt(cards) {
                 return;
             }
 
-            const rect = card.getBoundingClientRect();
-            // Calculate center point of the card
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            
-            // Calculate rotation based on distance from center
-            const rotateX = (y / rect.height) * -15; // Max 15 deg
-            const rotateY = (x / rect.width) * 15;   // Max 15 deg
-            
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const rect = card.getBoundingClientRect();
+                    // Calculate center point of the card
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    // Calculate rotation based on distance from center
+                    const rotateX = (y / rect.height) * -15; // Max 15 deg
+                    const rotateY = (x / rect.width) * 15;   // Max 15 deg
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
         
         card.addEventListener('mouseleave', () => {
