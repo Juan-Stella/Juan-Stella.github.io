@@ -132,15 +132,20 @@ async function fetchGitHubProjects() {
     const grid = document.getElementById('projects-grid');
     
     try {
-        // Fetch public repositories, sorted by updated time
-        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
+        // Fetch public repositories, sorted by updated time. Added &per_page=100 and a cache-busting timestamp
+        const cacheBuster = new Date().getTime();
+        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100&cb=${cacheBuster}`);
         if (!response.ok) throw new Error('Network response was not ok');
         const repos = await response.json();
 
         grid.innerHTML = ''; // Clear loading spinner
 
+        console.log("Total repos fetched:", repos.length);
+        
         // Filter out forks and hide the portfolio repo itself
         const originalRepos = repos.filter(repo => !repo.fork && repo.name !== `${GITHUB_USERNAME}.github.io`);
+        
+        console.log("Repos sorted after removing forks and github.io:", originalRepos.map(r=>r.name));
 
         if (originalRepos.length === 0) {
             grid.innerHTML = '<p class="text-muted" style="grid-column: 1/-1; text-align: center;">No se encontraron repositorios públicos originales.</p>';
