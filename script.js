@@ -125,14 +125,14 @@ async function fetchGitHubProjects() {
     
     try {
         // Fetch public repositories, sorted by updated time
-        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=12`);
+        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
         if (!response.ok) throw new Error('Network response was not ok');
         const repos = await response.json();
 
         grid.innerHTML = ''; // Clear loading spinner
 
-        // Filter out forks if you only want original projects, and slice to top 6
-        const originalRepos = repos.filter(repo => !repo.fork).slice(0, 6);
+        // Filter out forks if you only want original projects
+        const originalRepos = repos.filter(repo => !repo.fork);
 
         if (originalRepos.length === 0) {
             grid.innerHTML = '<p class="text-muted" style="grid-column: 1/-1; text-align: center;">No se encontraron repositorios públicos originales.</p>';

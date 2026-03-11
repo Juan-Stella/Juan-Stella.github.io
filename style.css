@@ -24,6 +24,22 @@ body {
     min-height: 100vh;
 }
 
+/* Global Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(157, 78, 221, 0.4);
+    border-radius: 6px;
+    border: 3px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
 /* Background Gradients & Orbs */
 .bg-gradient {
     position: fixed;
@@ -155,6 +171,61 @@ body {
 
 .glow-button i {
     margin-right: 8px;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 2rem 0 4rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-category {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    border-color: rgba(157, 78, 221, 0.4);
+    box-shadow: 0 10px 20px rgba(157, 78, 221, 0.15);
+}
+
+.skill-category h3 {
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+    font-size: 1.3rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tags span {
+    background: rgba(157, 78, 221, 0.15);
+    color: #e0b0ff;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-tags span:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: scale(1.05);
 }
 
 /* Projects Section */
