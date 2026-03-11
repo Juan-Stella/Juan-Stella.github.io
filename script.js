@@ -7,6 +7,7 @@ const GITHUB_USERNAME = 'Juan-Stella';
 const localProjectData = {
     "Reconocimiento-de-imagenes": {
         image: "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&q=80&w=800",
+        languages: ["Python", "OpenCV", "NumPy", "Scikit-Learn"],
         fullText: `
             <h2>Reconocimiento de Imágenes y Planificación</h2>
             <p>Este proyecto integra varias técnicas de inteligencia artificial y visión por computadora para clasificar y organizar objetos.</p>
@@ -20,6 +21,7 @@ const localProjectData = {
     },
     "Proyecto-Final-Robotica-1": {
         image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
+        languages: ["MATLAB", "Simulink", "Robotics Toolbox"],
         fullText: `
             <h2>Control de Franka Emika Panda</h2>
             <p>Análisis exhaustivo de cinemática desarrollado en MATLAB para el manipulador robótico de 7 grados de libertad "Franka Emika Panda".</p>
@@ -33,6 +35,7 @@ const localProjectData = {
     },
     "Breast-Cancer-Classification---Logistic-Regression-main": {
         image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
+        languages: ["Python", "Pandas", "Matplotlib", "NumPy"],
         fullText: `
             <h2>Clasificación de Cáncer de Mama</h2>
             <p>Implementación desde cero en Python de un modelo predictivo basado en Regresión Logística.</p>
@@ -46,6 +49,7 @@ const localProjectData = {
     },
     "IA2": {
         image: "https://images.unsplash.com/photo-1620712948343-008423671ea2?auto=format&fit=crop&q=80&w=800",
+        languages: ["Jupyter Notebook", "Python", "Deep Learning"],
         fullText: `
             <h2>Inteligencia Artificial 2</h2>
             <p>Repositorio contenedor de las prácticas avanzadas cursadas en la asignatura de IA2, desarrollado principalmente en Jupyter Notebooks.</p>
@@ -54,6 +58,7 @@ const localProjectData = {
     },
     "Automatica-y-maquinas-electricas-final": {
          image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=800",
+         languages: ["MATLAB", "Simulink", "Control Systems"],
          fullText: `
             <h2>Automática y Máquinas Eléctricas</h2>
             <p>Resolución práctica, simulaciones y reporte final correspondientes a la materia Automática y Máquinas Eléctricas.</p>
@@ -65,6 +70,7 @@ const localProjectData = {
     },
     "Control-y-Sistemas": {
          image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+         languages: ["C", "Microcontroladores", "Hardware Dev"],
          fullText: `
             <h2>Control y Sistemas</h2>
             <p>Repositorio enfocado en implementaciones robustas en lenguaje <code>C</code> para el control de sistemas electrónicos y microcontroladores.</p>
@@ -73,6 +79,7 @@ const localProjectData = {
     },
     "Multiple-Linear-Regression": {
          image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+         languages: ["Python", "Math", "Data Analisys"],
          fullText: `
             <h2>Regresión Lineal Múltiple Manual</h2>
             <p>Mi primera inmersión profunda en el análisis de variables múltiples construyendo un modelo de regresión lineal completamente manual en Python.</p>
@@ -81,6 +88,7 @@ const localProjectData = {
     },
     "Multiple-Linear-with-Scikitlearn": {
          image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800",
+         languages: ["Python", "Scikit-Learn", "Machine Learning"],
          fullText: `
             <h2>Regresión Lineal con Scikit-Learn</h2>
             <p>El mismo abordaje predictivo abordado en mi regresión lineal manual, pero implementado aprovechando el poder de <strong>scikit-learn</strong>.</p>
@@ -131,8 +139,8 @@ async function fetchGitHubProjects() {
 
         grid.innerHTML = ''; // Clear loading spinner
 
-        // Filter out forks if you only want original projects
-        const originalRepos = repos.filter(repo => !repo.fork);
+        // Filter out forks and hide the portfolio repo itself
+        const originalRepos = repos.filter(repo => !repo.fork && repo.name !== `${GITHUB_USERNAME}.github.io`);
 
         if (originalRepos.length === 0) {
             grid.innerHTML = '<p class="text-muted" style="grid-column: 1/-1; text-align: center;">No se encontraron repositorios públicos originales.</p>';
@@ -152,6 +160,18 @@ async function fetchGitHubProjects() {
                 year: 'numeric', month: 'short', day: 'numeric'
             });
 
+            // Add logic to get custom language tags, or fallback to github language
+            const customData = localProjectData[repo.name];
+            let languageTagsHTML = '';
+            
+            if (customData && customData.languages && customData.languages.length > 0) {
+                languageTagsHTML = customData.languages.map(lang => `<span class="tech-tag">${lang}</span>`).join('');
+            } else if (repo.language) {
+                languageTagsHTML = `<span class="tech-tag">${repo.language}</span>`;
+            } else {
+                languageTagsHTML = '<span class="tech-tag">Varios</span>';
+            }
+
             card.innerHTML = `
                 <div class="project-header">
                     <i class="far fa-folder-open"></i>
@@ -169,8 +189,8 @@ async function fetchGitHubProjects() {
                     <a href="#" class="view-details-link" data-repo="${repo.name}">${repo.name}</a>
                 </h3>
                 <p class="project-desc">${repo.description || 'Sin descripción disponible para este repositorio.'}</p>
-                <div class="project-tech">
-                    ${repo.language ? `<span class="tech-tag">${repo.language}</span>` : '<span class="tech-tag">Varios</span>'}
+                <div class="project-tech" style="gap: 0.4rem; padding-bottom: 0.5rem;">
+                    ${languageTagsHTML}
                 </div>
                 <button class="view-details-btn glow-button" data-repo="${repo.name}" style="margin-bottom: 1rem; font-size: 0.85rem; padding: 0.4rem 1rem; align-self: flex-start; background: transparent; color: var(--text-main);">Ver detalles</button>
                 <div class="project-stats">
