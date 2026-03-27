@@ -1,392 +1,576 @@
+// ==========================================
 // CONFIGURATION
 // ==========================================
-// TODO: Reemplaza 'octocat' con tu nombre de usuario de GitHub real
-const GITHUB_USERNAME = 'Juan-Stella'; 
+const GITHUB_USERNAME = 'Juan-Stella';
 
-// Datos manuales para enriquecer el portfolio
+// ==========================================
+// TRANSLATIONS
+// ==========================================
+const T = {
+    es: {
+        nav_about:      'Sobre mí',
+        nav_skills:     'Skills',
+        nav_projects:   'Proyectos',
+        nav_contact:    'Contacto',
+        hero_badge:     '✦ Disponible para oportunidades',
+        hero_role:      'Ing. Mecatrónica',
+        hero_focus:     'Robótica & IA',
+        hero_bio:       'Estudiante apasionado por construir sistemas inteligentes que perciben, razonan y actúan.',
+        hero_contact_btn: 'Contacto',
+        about_title:    'Sobre mí',
+        about_p1:       'Soy estudiante de Ingeniería Mecatrónica con un foco particular en Robótica e Inteligencia Artificial. Me apasiona construir sistemas capaces de percibir el entorno, razonar y actuar de forma autónoma — desde manipuladores robóticos y visión por computadora hasta algoritmos de control embebido.',
+        about_p2:       'Busco sumarme a equipos de ingeniería donde la tecnología de punta se aplique a problemas reales del mundo, como los que trabajan en robótica de software a nivel profesional.',
+        tag_degree:     'Ing. Mecatrónica',
+        tag_focus:      'Robótica & IA',
+        edu_title:      'Educación',
+        edu_degree:     'Ingeniería Mecatrónica',
+        edu_school:     'Universidad · Mendoza, Argentina',
+        edu_period:     'En curso',
+        course_1: 'Robótica', course_2: 'Inteligencia Artificial', course_3: 'Control de Sistemas',
+        course_4: 'Visión por Computadora', course_5: 'Microcontroladores', course_6: 'Máquinas Eléctricas',
+        stat_repos:     'Repositorios',
+        stat_stars:     'GitHub Stars',
+        stat_robotics:  'Proyectos Robóticos',
+        stat_ml:        'Modelos de ML',
+        skills_title:   'Skills',
+        skills_lang:    'Lenguajes',
+        skills_robotics:'Robótica & Control',
+        skills_ai:      'IA & Visión',
+        skill_kinematics: 'Cinemática',
+        skill_trajectory: 'Trayectorias',
+        skill_control:    'Control Clásico',
+        projects_title: 'Proyectos',
+        filter_all:     'Todos',
+        filter_robotics:'Robótica',
+        filter_ai:      'IA & ML',
+        filter_control: 'Control',
+        contact_title:  '¿Hablamos?',
+        contact_sub:    'Estoy abierto a oportunidades en robótica, IA y sistemas embebidos. No dudes en escribirme.',
+        footer_text:    'Hecho con CSS Vanilla',
+        details_btn:    'Ver detalles',
+        github_btn:     'Ver Código',
+        live_btn:       'Visitar Web',
+    },
+    en: {
+        nav_about:      'About',
+        nav_skills:     'Skills',
+        nav_projects:   'Projects',
+        nav_contact:    'Contact',
+        hero_badge:     '✦ Open to opportunities',
+        hero_role:      'Mechatronics Eng.',
+        hero_focus:     'Robotics & AI',
+        hero_bio:       'Student passionate about building intelligent systems that can perceive, reason, and act.',
+        hero_contact_btn: 'Contact',
+        about_title:    'About me',
+        about_p1:       "I'm a Mechatronics Engineering student focused on Robotics and Artificial Intelligence. I'm passionate about building systems that can perceive their environment, reason, and act autonomously — from robotic manipulators and computer vision to embedded control algorithms.",
+        about_p2:       "I'm looking to join engineering teams where cutting-edge technology is applied to real-world problems, like those working in professional-grade robotics software.",
+        tag_degree:     'Mechatronics Eng.',
+        tag_focus:      'Robotics & AI',
+        edu_title:      'Education',
+        edu_degree:     'Mechatronics Engineering',
+        edu_school:     'University · Mendoza, Argentina',
+        edu_period:     'In progress',
+        course_1: 'Robotics', course_2: 'Artificial Intelligence', course_3: 'Control Systems',
+        course_4: 'Computer Vision', course_5: 'Microcontrollers', course_6: 'Electric Machines',
+        stat_repos:     'Repositories',
+        stat_stars:     'GitHub Stars',
+        stat_robotics:  'Robotics Projects',
+        stat_ml:        'ML Models',
+        skills_title:   'Skills',
+        skills_lang:    'Languages',
+        skills_robotics:'Robotics & Control',
+        skills_ai:      'AI & Vision',
+        skill_kinematics: 'Kinematics',
+        skill_trajectory: 'Trajectory Planning',
+        skill_control:    'Classical Control',
+        projects_title: 'Projects',
+        filter_all:     'All',
+        filter_robotics:'Robotics',
+        filter_ai:      'AI & ML',
+        filter_control: 'Control',
+        contact_title:  "Let's talk!",
+        contact_sub:    "I'm open to opportunities in robotics, AI, and embedded systems. Feel free to reach out.",
+        footer_text:    'Built with Vanilla CSS',
+        details_btn:    'View details',
+        github_btn:     'View Code',
+        live_btn:       'Live Site',
+    }
+};
+
+// ==========================================
+// PROJECT DATA
+// ==========================================
 const localProjectData = {
     "Reconocimiento-de-imagenes": {
+        category: "ai",
         image: "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "OpenCV", "NumPy", "Scikit-Learn"],
-        shortDescription: "Sistema de IA y visión computacional para clasificar objetos y planificar su transporte mediante algoritmos avanzados.",
+        shortDescription: {
+            es: "Sistema de IA y visión computacional para clasificar objetos y planificar su transporte mediante algoritmos avanzados (KNN, KMeans, STRIPS, A*).",
+            en: "AI and computer vision system to classify objects and plan their transport using advanced algorithms (KNN, KMeans, STRIPS, A*)."
+        },
         fullText: `
-            <h2>Reconocimiento de Imágenes y Planificación</h2>
-            <p>Este proyecto integra varias técnicas de inteligencia artificial y visión por computadora para clasificar y organizar objetos.</p>
-            <h3>Características principales:</h3>
+            <h1>Reconocimiento de Imágenes y Planificación</h1>
+            <p>Este proyecto integra técnicas de IA y visión por computadora para clasificar y organizar objetos de forma autónoma.</p>
+            <h2>Características principales</h2>
             <ul>
-                <li><strong>Procesamiento visual:</strong> Pre-procesamiento y extracción de características utilizando algoritmos <code>KNN</code> y <code>KMeans</code>.</li>
-                <li><strong>Planificación lógica:</strong> Utilización del algoritmo <strong>STRIPS</strong> para determinar cómo acomodar cajas conteniendo los objetos detectados.</li>
-                <li><strong>Pathfinding:</strong> Implementación del algoritmo <strong>A*</strong> para encontrar la ruta óptima de transporte de las cajas al área objetivo.</li>
+                <li><strong>Procesamiento visual:</strong> Pre-procesamiento y extracción de características usando algoritmos <code>KNN</code> y <code>KMeans</code>.</li>
+                <li><strong>Planificación lógica:</strong> Algoritmo <strong>STRIPS</strong> para determinar cómo acomodar cajas con los objetos detectados.</li>
+                <li><strong>Pathfinding:</strong> Implementación de <strong>A*</strong> para encontrar la ruta óptima de transporte.</li>
             </ul>
         `
     },
     "Proyecto-Final-Robotica-1": {
+        category: "robotics",
         image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
         languages: ["MATLAB", "Simulink", "Robotics Toolbox"],
-        shortDescription: "Análisis exhaustivo de cinemática directa/inversa y control de trayectorias desarrollado en MATLAB para el brazo robótico Franka Emika Panda.",
+        shortDescription: {
+            es: "Análisis de cinemática directa/inversa y control de trayectorias para el brazo robótico Franka Emika Panda (7 DOF) en MATLAB.",
+            en: "Forward/inverse kinematics analysis and trajectory control for the Franka Emika Panda robotic arm (7 DOF) in MATLAB."
+        },
         fullText: `
-            <h2>Control de Franka Emika Panda</h2>
-            <p>Análisis exhaustivo de cinemática desarrollado en MATLAB para el manipulador robótico de 7 grados de libertad "Franka Emika Panda".</p>
-            <h3>Desarrollo del proyecto:</h3>
+            <h1>Control del Franka Emika Panda</h1>
+            <p>Análisis exhaustivo de cinemática para el manipulador robótico de 7 grados de libertad "Franka Emika Panda" en MATLAB.</p>
+            <h2>Desarrollo</h2>
             <ul>
-                <li><strong>Cinemática Directa e Inversa:</strong> Modelado matemático para determinar la posición del efector final y los ángulos necesarios de cada articulación.</li>
-                <li><strong>Análisis Jacobiano:</strong> Estudio de las velocidades, el mapeo de fuerzas y las posibles singularidades mecánicas del brazo.</li>
-                <li><strong>Generación de Trayectorias:</strong> Planificación de movimientos suaves y óptimos en su espacio operativo.</li>
+                <li><strong>Cinemática Directa e Inversa:</strong> Modelado matemático para determinar la posición del efector final y los ángulos de cada articulación.</li>
+                <li><strong>Análisis Jacobiano:</strong> Estudio de velocidades, mapeo de fuerzas y singularidades mecánicas.</li>
+                <li><strong>Generación de Trayectorias:</strong> Planificación de movimientos suaves y óptimos en el espacio operativo.</li>
             </ul>
         `
     },
     "Breast-Cancer-Classification---Logistic-Regression-main": {
+        category: "ai",
         image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "Pandas", "Matplotlib", "NumPy"],
-        shortDescription: "Implementación matemática desde cero de un modelo predictivo basado en Regresión Logística usando Python.",
+        shortDescription: {
+            es: "Implementación matemática desde cero de un modelo predictivo de Regresión Logística para clasificación de cáncer de mama.",
+            en: "Mathematical implementation from scratch of a Logistic Regression predictive model for breast cancer classification."
+        },
         fullText: `
-            <h2>Clasificación de Cáncer de Mama</h2>
+            <h1>Clasificación de Cáncer de Mama</h1>
             <p>Implementación desde cero en Python de un modelo predictivo basado en Regresión Logística.</p>
-            <h3>Detalles clave:</h3>
+            <h2>Detalles clave</h2>
             <ul>
-                <li>Desarrollo de las matemáticas fundamentales utilizando la función Sigmoide.</li>
-                <li>Entrenamiento iterativo de pesos y sesgos mediante el algoritmo de descenso de gradiente.</li>
-                <li>Evaluación del rendimiento y precisión (Accuracy) del modelo para distinguir tejidos malignos de benignos.</li>
+                <li>Desarrollo de la función Sigmoide y matemáticas fundamentales del modelo.</li>
+                <li>Entrenamiento iterativo mediante descenso de gradiente.</li>
+                <li>Evaluación de precisión (Accuracy) para distinguir tejidos malignos de benignos.</li>
             </ul>
         `
     },
     "IA2": {
+        category: "ai",
         image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "Deep Learning"],
-        shortDescription: "Repositorio principal de prácticas avanzadas de IA. Incluye experimentación con redes neuronales y machine learning.",
+        shortDescription: {
+            es: "Repositorio de prácticas avanzadas de IA: redes neuronales, machine learning y técnicas analíticas de datos.",
+            en: "Advanced AI practices repository: neural networks, machine learning and data analytics techniques."
+        },
         fullText: `
-            <h2>Inteligencia Artificial 2</h2>
-            <p>Repositorio contenedor de las prácticas avanzadas cursadas en la asignatura de IA2.</p>
-            <p>Incluye implementaciones prácticas y experimentación activa con distintos modelos de redes neuronales, machine learning y técnicas analíticas de datos.</p>
+            <h1>Inteligencia Artificial 2</h1>
+            <p>Repositorio contenedor de las prácticas avanzadas de la materia IA2.</p>
+            <p>Incluye implementaciones prácticas y experimentación con distintos modelos de redes neuronales, machine learning y técnicas analíticas de datos.</p>
         `
     },
     "Automatica-y-maquinas-electricas-final": {
-         image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=800",
-         languages: ["MATLAB", "Simulink", "Control Systems"],
-         shortDescription: "Simulaciones y control automático de plantas físicas y sistemas eléctricos desarrollados íntegramente en MATLAB/Simulink.",
-         fullText: `
-            <h2>Automática y Máquinas Eléctricas</h2>
-            <p>Resolución práctica, simulaciones y reporte final correspondientes a la materia Automática y Máquinas Eléctricas.</p>
-            <h3>Herramientas:</h3>
+        category: "control",
+        image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=800",
+        languages: ["MATLAB", "Simulink", "Control Systems"],
+        shortDescription: {
+            es: "Simulaciones y control automático de plantas físicas y sistemas eléctricos desarrollados en MATLAB/Simulink.",
+            en: "Simulations and automatic control of physical plants and electrical systems developed in MATLAB/Simulink."
+        },
+        fullText: `
+            <h1>Automática y Máquinas Eléctricas</h1>
+            <p>Resolución práctica, simulaciones y reporte final de la materia Automática y Máquinas Eléctricas.</p>
+            <h2>Herramientas</h2>
             <ul>
-                <li><strong>MATLAB / Simulink:</strong> Utilizados en profundidad para modelar, simular plantas físicas y analizar la respuesta en el tiempo y la frecuencia de diversos sistemas de control eléctricos.</li>
+                <li><strong>MATLAB / Simulink:</strong> Modelado, simulación de plantas físicas y análisis de respuesta en tiempo/frecuencia de sistemas de control eléctricos.</li>
             </ul>
-         `
+        `
     },
     "Control-y-Sistemas": {
-         image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
-         languages: ["C", "Microcontroladores"],
-         shortDescription: "Algoritmos robustos en lenguaje C para el control de sistemas electrónicos y hardware de microcontroladores.",
-         fullText: `
-            <h2>Control y Sistemas</h2>
-            <p>Repositorio enfocado en implementaciones robustas en lenguaje <code>C</code> para el control de sistemas electrónicos y microcontroladores.</p>
-            <p>Los algoritmos desarrollados apuntan a la interacción con hardware de bajo nivel, abarcando desde el procesamiento de señales de sensores en tiempo real hasta la actuación sobre plantas físicas empleando teorías del control clásico.</p>
-         `
+        category: "control",
+        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
+        languages: ["C", "Microcontroladores"],
+        shortDescription: {
+            es: "Algoritmos robustos en C para el control de sistemas electrónicos y hardware de microcontroladores de bajo nivel.",
+            en: "Robust C algorithms for controlling electronic systems and low-level microcontroller hardware."
+        },
+        fullText: `
+            <h1>Control y Sistemas</h1>
+            <p>Repositorio enfocado en implementaciones en lenguaje <code>C</code> para el control de sistemas electrónicos y microcontroladores.</p>
+            <p>Los algoritmos abarcan desde el procesamiento de señales de sensores en tiempo real hasta la actuación sobre plantas físicas usando teorías del control clásico.</p>
+        `
     },
     "Multiple-Linear-Regression": {
-         image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
-         languages: ["Python", "Math"],
-         shortDescription: "Construcción manual desde cero de un modelo estadístico de regresión lineal múltiple para predicción de variables.",
-         fullText: `
-            <h2>Regresión Lineal Múltiple Manual</h2>
-            <p>Mi primera inmersión profunda en el análisis de variables múltiples construyendo un modelo de regresión lineal completamente manual en Python.</p>
-            <p>El objetivo de este proyecto es desglosar la "caja negra" detrás del modelo estadístico, entendiendo paso a paso cómo interaccionan múltiples variables predictoras con el resultado final.</p>
-         `
+        category: "ai",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+        languages: ["Python", "Math"],
+        shortDescription: {
+            es: "Construcción manual desde cero de un modelo de regresión lineal múltiple para predicción de variables.",
+            en: "Manual from-scratch construction of a multiple linear regression model for variable prediction."
+        },
+        fullText: `
+            <h1>Regresión Lineal Múltiple Manual</h1>
+            <p>Primera inmersión profunda en el análisis de variables múltiples construyendo un modelo de regresión lineal completamente manual en Python.</p>
+            <p>El objetivo es desglosar la "caja negra" del modelo estadístico, entendiendo paso a paso cómo interactúan múltiples variables predictoras con el resultado final.</p>
+        `
     },
     "Multiple-Linear-with-Scikitlearn": {
-         image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800",
-         languages: ["Python", "Scikit-Learn", "Machine Learning"],
-         shortDescription: "Abordaje predictivo optimizado empleando el poder de la librería Scikit-Learn para modelos de regresión lineal.",
-         fullText: `
-            <h2>Regresión Lineal con Scikit-Learn</h2>
-            <p>El mismo abordaje predictivo abordado en mi regresión lineal manual, pero implementado aprovechando el poder de <strong>scikit-learn</strong>.</p>
-            <p>Este proyecto demuestra la optimización de código, eficiencia escalable, y lo expone preparado para integrarse fácilmente a flujos de trabajo profesionales como cross-validation y data pipelines.</p>
-         `
+        category: "ai",
+        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800",
+        languages: ["Python", "Scikit-Learn", "Machine Learning"],
+        shortDescription: {
+            es: "Abordaje predictivo optimizado con Scikit-Learn: modelos de regresión preparados para flujos de trabajo profesionales.",
+            en: "Optimized predictive approach using Scikit-Learn: regression models ready for professional workflows."
+        },
+        fullText: `
+            <h1>Regresión Lineal con Scikit-Learn</h1>
+            <p>El mismo abordaje predictivo de la regresión lineal manual, implementado con <strong>scikit-learn</strong>.</p>
+            <p>Demuestra la optimización de código, eficiencia escalable, y preparación para integrarse a flujos profesionales como cross-validation y data pipelines.</p>
+        `
     }
 };
+
 // ==========================================
+// STATE
+// ==========================================
+let currentLang = 'es';
+let allRepos = [];
+let currentFilter = 'all';
 
+// ==========================================
+// INIT
+// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
-    // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-
+    applyTranslations();
     fetchGitHubProfile();
     fetchGitHubProjects();
-    setupModalListeners();
+    setupLangToggle();
+    setupNavbar();
+    setupMobileMenu();
+    setupModal();
     setupBackToTop();
+    setupScrollReveal();
+    setupFilterTabs();
 });
 
+// ==========================================
+// LANGUAGE TOGGLE
+// ==========================================
+function setupLangToggle() {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+        currentLang = currentLang === 'es' ? 'en' : 'es';
+        document.getElementById('lang-es').classList.toggle('active', currentLang === 'es');
+        document.getElementById('lang-en').classList.toggle('active', currentLang === 'en');
+        applyTranslations();
+        // Re-render project descriptions if loaded
+        if (allRepos.length > 0) renderProjects(allRepos);
+    });
+}
+
+function applyTranslations() {
+    const t = T[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+    });
+    // Update html lang attribute
+    document.documentElement.lang = currentLang;
+}
+
+function t(key) {
+    return T[currentLang][key] || key;
+}
+
+// ==========================================
+// NAVBAR SCROLL EFFECT
+// ==========================================
+function setupNavbar() {
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+}
+
+// ==========================================
+// MOBILE MENU
+// ==========================================
+function setupMobileMenu() {
+    const btn  = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (!btn || !menu) return;
+
+    btn.addEventListener('click', () => menu.classList.toggle('open'));
+    menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => menu.classList.remove('open'));
+    });
+}
+
+// ==========================================
+// GITHUB PROFILE
+// ==========================================
 async function fetchGitHubProfile() {
     try {
-        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const user = await response.json();
+        const res  = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+        if (!res.ok) throw new Error();
+        const user = await res.json();
 
-        document.getElementById('profile-img').src = user.avatar_url;
-        document.getElementById('profile-name').innerHTML = user.name || user.login;
-        document.getElementById('profile-bio').textContent = user.bio || 'Desarrollador de Software | Apasionado por la tecnología';
-        document.getElementById('github-link').href = user.html_url;
-        
-        // Update page title
-        document.title = `${user.name || user.login} | Portfolio GitHub`;
+        const img  = document.getElementById('profile-img');
+        const name = document.getElementById('profile-name');
+        const bio  = document.getElementById('profile-bio');
+        const link = document.getElementById('github-link');
 
-    } catch (error) {
-        console.error('Error fetching profile:', error);
-        document.getElementById('profile-name').innerHTML = 'Usuario: ' + GITHUB_USERNAME;
-        document.getElementById('profile-bio').innerHTML = 'Edita script.js para cambiar el nombre de usuario de GitHub.<br>Ejemplo: const GITHUB_USERNAME = "tu-usuario"';
+        if (img)  img.src = user.avatar_url;
+        if (name) name.textContent = user.name || user.login;
+        if (link) link.href = user.html_url;
+        // Keep translated bio instead of GitHub bio
+        document.title = `${user.name || user.login} | Ing. Mecatrónica`;
+
+        // Stats
+        const reposStat = document.getElementById('stat-repos');
+        if (reposStat) reposStat.textContent = user.public_repos ?? '–';
+
+    } catch {
+        console.warn('Could not load GitHub profile.');
     }
 }
 
+// ==========================================
+// GITHUB PROJECTS
+// ==========================================
 async function fetchGitHubProjects() {
     const grid = document.getElementById('projects-grid');
-    
     try {
-        // Fetch public repositories, sorted by updated time. Added &per_page=100 and a cache-busting timestamp
-        const cacheBuster = new Date().getTime();
-        const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100&cb=${cacheBuster}`);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const repos = await response.json();
+        const res   = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`);
+        if (!res.ok) throw new Error();
+        const repos = await res.json();
 
-        grid.innerHTML = ''; // Clear loading spinner
+        const portfolioName = `${GITHUB_USERNAME}.github.io`.toLowerCase();
+        allRepos = repos.filter(r => !r.fork && r.name.toLowerCase() !== portfolioName);
 
-        console.log("Total repos fetched:", repos.length);
-        
-        // Filter out forks and hide the portfolio repo itself
-        const portfolioRepoName = `${GITHUB_USERNAME}.github.io`.toLowerCase();
-        const originalRepos = repos.filter(repo => !repo.fork && repo.name.toLowerCase() !== portfolioRepoName);
-        
-        console.log("Repos sorted after removing forks and github.io:", originalRepos.map(r=>r.name));
+        // Calculate total stars
+        const totalStars = allRepos.reduce((acc, r) => acc + r.stargazers_count, 0);
+        const starsStat  = document.getElementById('stat-stars');
+        if (starsStat) starsStat.textContent = totalStars;
 
-        if (originalRepos.length === 0) {
-            grid.innerHTML = '<p class="text-muted" style="grid-column: 1/-1; text-align: center;">No se encontraron repositorios públicos originales.</p>';
-            return;
-        }
+        renderProjects(allRepos);
 
-        originalRepos.forEach((repo, index) => {
-            const card = document.createElement('div');
-            card.className = 'project-card reveal';
-
-            // Format date
-            const updateDate = new Date(repo.updated_at).toLocaleDateString('es-ES', {
-                year: 'numeric', month: 'short', day: 'numeric'
-            });
-
-            // Add logic to get custom language tags, or fallback to github language
-            const customData = localProjectData[repo.name];
-            let languageTagsHTML = '';
-            
-            if (customData && customData.languages && customData.languages.length > 0) {
-                languageTagsHTML = customData.languages.map(lang => `<span class="tech-tag">${lang}</span>`).join('');
-            } else if (repo.language) {
-                languageTagsHTML = `<span class="tech-tag">${repo.language}</span>`;
-            } else {
-                languageTagsHTML = '<span class="tech-tag">Varios</span>';
-            }
-
-            card.innerHTML = `
-                <div class="project-header">
-                    <i class="far fa-folder-open"></i>
-                    <div class="project-links">
-                        <a href="${repo.html_url}" target="_blank" title="Ver en GitHub" aria-label="GitHub Repo">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        ${repo.homepage ? `
-                        <a href="${repo.homepage}" target="_blank" title="Sitio en vivo" aria-label="Live Site" style="margin-left: 10px;">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>` : ''}
-                    </div>
-                </div>
-                <h3 class="project-title">
-                    <a href="#" class="view-details-link" data-repo="${repo.name}">${repo.name}</a>
-                </h3>
-                <p class="project-desc">${(customData && customData.shortDescription) ? customData.shortDescription : (repo.description || 'Sin descripción disponible para este repositorio.')}</p>
-                <div class="project-tech" style="gap: 0.4rem; padding-bottom: 0.5rem;">
-                    ${languageTagsHTML}
-                </div>
-                <button class="view-details-btn glow-button" data-repo="${repo.name}" style="margin-bottom: 1rem; font-size: 0.85rem; padding: 0.4rem 1rem; align-self: flex-start; background: transparent; color: var(--text-main);">Ver detalles</button>
-                <div class="project-stats">
-                    <span title="Estrellas"><i class="far fa-star"></i> ${repo.stargazers_count}</span>
-                    <span title="Forks"><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
-                    <span style="margin-left: auto; font-size: 0.8rem;"><i class="far fa-clock"></i> ${updateDate}</span>
-                </div>
-            `;
-
-            grid.appendChild(card);
-        });
-
-        // Attach event listeners to open modal
-        grid.querySelectorAll('.view-details-link, .view-details-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const repoName = e.currentTarget.getAttribute('data-repo');
-                const repoInfo = originalRepos.find(r => r.name === repoName);
-                if (repoInfo) {
-                    openModal(repoInfo.name, repoInfo.html_url, repoInfo.homepage);
-                }
-            });
-        });
-
-        // Initialize new UX features
-        setupScrollReveal();
-        setup3DTilt(document.querySelectorAll('.project-card'));
-
-    } catch (error) {
-        console.error('Error fetching repos:', error);
-        grid.innerHTML = '<p class="text-muted" style="grid-column: 1/-1; text-align: center;">Error al cargar los proyectos desde GitHub. Asegúrate de configurar un nombre de usuario válido.</p>';
+    } catch {
+        if (grid) grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--text-muted)">No se pudieron cargar los proyectos.</p>';
     }
 }
 
-// ==========================================
-// MODAL LOGIC
-// ==========================================
+function renderProjects(repos) {
+    const grid = document.getElementById('projects-grid');
+    if (!grid) return;
+    grid.innerHTML = '';
 
-async function openModal(repoName, repoHtmlUrl, repoHomepage) {
-    const modal = document.getElementById('project-modal');
-    const modalBody = document.getElementById('modal-body');
-    const modalLinks = document.getElementById('modal-links');
-    
-    modalBody.innerHTML = '<div class="loading-spinner"></div><p style="text-align:center;">Cargando detalles del proyecto...</p>';
-    modalLinks.innerHTML = '';
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    
-    // Check if we have rich manual data for this project
-    const localData = localProjectData[repoName];
+    if (repos.length === 0) {
+        grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--text-muted)">No se encontraron repositorios.</p>';
+        return;
+    }
 
-    if (localData) {
-        // Use our beautiful manual data instead of the raw README
-        modalBody.innerHTML = `
-            ${localData.image ? `<img src="${localData.image}" alt="${repoName} Banner" style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem;">` : ''}
-            <div>${localData.fullText}</div>
+    repos.forEach((repo, i) => {
+        const custom      = localProjectData[repo.name];
+        const category    = custom?.category || 'other';
+        const desc        = custom?.shortDescription
+            ? (typeof custom.shortDescription === 'object' ? custom.shortDescription[currentLang] : custom.shortDescription)
+            : (repo.description || (currentLang === 'es' ? 'Sin descripción disponible.' : 'No description available.'));
+
+        let langsHTML = '';
+        if (custom?.languages?.length) {
+            langsHTML = custom.languages.map(l => `<span class="tech-tag">${l}</span>`).join('');
+        } else if (repo.language) {
+            langsHTML = `<span class="tech-tag">${repo.language}</span>`;
+        } else {
+            langsHTML = `<span class="tech-tag">–</span>`;
+        }
+
+        const date = new Date(repo.updated_at).toLocaleDateString(currentLang === 'es' ? 'es-ES' : 'en-US', {
+            year: 'numeric', month: 'short', day: 'numeric'
+        });
+
+        const isHidden = currentFilter !== 'all' && category !== currentFilter;
+
+        const card = document.createElement('div');
+        card.className = `project-card reveal${isHidden ? ' hidden' : ''}`;
+        card.setAttribute('data-category', category);
+        card.style.transitionDelay = `${i * 60}ms`;
+
+        card.innerHTML = `
+            <div class="project-header">
+                <i class="far fa-folder-open"></i>
+                <div class="project-links">
+                    <a href="${repo.html_url}" target="_blank" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    ${repo.homepage ? `<a href="${repo.homepage}" target="_blank" title="Live" aria-label="Live site"><i class="fas fa-external-link-alt"></i></a>` : ''}
+                </div>
+            </div>
+            <h3 class="project-title">${repo.name.replace(/-/g, ' ')}</h3>
+            <p class="project-desc">${desc}</p>
+            <div class="project-tech">${langsHTML}</div>
+            <button class="view-details-btn" data-repo="${repo.name}">${t('details_btn')}</button>
+            <div class="project-stats">
+                <span><i class="far fa-star"></i> ${repo.stargazers_count}</span>
+                <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                <span style="margin-left:auto;font-size:0.78rem"><i class="far fa-clock"></i> ${date}</span>
+            </div>
+        `;
+
+        grid.appendChild(card);
+    });
+
+    // Bind detail buttons
+    grid.querySelectorAll('.view-details-btn').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.stopPropagation();
+            const repoName = e.currentTarget.getAttribute('data-repo');
+            const repo     = allRepos.find(r => r.name === repoName);
+            if (repo) openModal(repo.name, repo.html_url, repo.homepage);
+        });
+    });
+
+    setupScrollReveal();
+    setup3DTilt(grid.querySelectorAll('.project-card'));
+}
+
+// ==========================================
+// FILTER TABS
+// ==========================================
+function setupFilterTabs() {
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentFilter = btn.getAttribute('data-filter');
+            filterCards(currentFilter);
+        });
+    });
+}
+
+function filterCards(filter) {
+    document.querySelectorAll('.project-card').forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const show = filter === 'all' || cat === filter;
+        card.classList.toggle('hidden', !show);
+    });
+}
+
+// ==========================================
+// MODAL
+// ==========================================
+function setupModal() {
+    const overlay  = document.getElementById('project-modal');
+    const closeBtn = document.getElementById('close-modal');
+
+    const close = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', close);
+    if (overlay)  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && overlay?.classList.contains('active')) close(); });
+}
+
+async function openModal(repoName, repoUrl, homepage) {
+    const overlay   = document.getElementById('project-modal');
+    const body      = document.getElementById('modal-body');
+    const footer    = document.getElementById('modal-links');
+    if (!overlay || !body || !footer) return;
+
+    body.innerHTML   = '<p style="text-align:center;color:var(--text-muted);padding:2rem">Cargando…</p>';
+    footer.innerHTML = '';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    const custom = localProjectData[repoName];
+
+    if (custom) {
+        body.innerHTML = `
+            ${custom.image ? `<img src="${custom.image}" alt="${repoName}" style="width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:1.5rem">` : ''}
+            <div>${custom.fullText}</div>
         `;
     } else {
-        // Fallback to fetch README from GitHub API for unknown repositories
         try {
-            const response = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}/readme`);
-            if (!response.ok) {
-                throw new Error('README not found');
-            }
-            
-            const data = await response.json();
-            const markdown = decodeURIComponent(escape(atob(data.content)));
-            const htmlContent = DOMPurify.sanitize(marked.parse(markdown));
-            modalBody.innerHTML = htmlContent;
-            
-        } catch (error) {
-            console.warn('Error fetching README:', error);
-            modalBody.innerHTML = `
-                <h2>${repoName}</h2>
-                <p>No hay una descripción detallada configurada para este repositorio.</p>
-                <p>Puedes visitar el enlace de GitHub directamente para ver el código fuente y más detalles.</p>
-            `;
+            const res  = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}/readme`);
+            if (!res.ok) throw new Error();
+            const data = await res.json();
+            const md   = decodeURIComponent(escape(atob(data.content)));
+            body.innerHTML = DOMPurify.sanitize(marked.parse(md));
+        } catch {
+            body.innerHTML = `<h2>${repoName}</h2><p style="color:var(--text-muted)">No hay descripción detallada disponible. Visitá el repositorio en GitHub para ver el código.</p>`;
         }
     }
-    
-    // Set Footer Links
-    modalLinks.innerHTML = `
-        <a href="${repoHtmlUrl}" target="_blank" title="Ver en GitHub" class="glow-button" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
-            <i class="fab fa-github"></i> Ver Código
+
+    footer.innerHTML = `
+        <a href="${repoUrl}" target="_blank" class="btn btn-outline" style="font-size:0.88rem;padding:0.45rem 1rem">
+            <i class="fab fa-github"></i> ${t('github_btn')}
         </a>
-        ${repoHomepage ? `
-        <a href="${repoHomepage}" target="_blank" title="Sitio en vivo" class="glow-button" style="font-size: 0.9rem; padding: 0.5rem 1rem; border-color: var(--secondary); color: var(--secondary);">
-            <i class="fas fa-external-link-alt"></i> Visitar Web
+        ${homepage ? `<a href="${homepage}" target="_blank" class="btn btn-primary" style="font-size:0.88rem;padding:0.45rem 1rem">
+            <i class="fas fa-external-link-alt"></i> ${t('live_btn')}
         </a>` : ''}
     `;
 }
 
-function setupModalListeners() {
-    const modal = document.getElementById('project-modal');
-    const closeBtn = document.getElementById('close-modal');
-    
-    const closeModal = () => {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    };
-
-    closeBtn.addEventListener('click', closeModal);
-    
-    // Close modal when clicking outside of the content box
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-}
-
 // ==========================================
-// PREMIUM UX FEATURES
+// SCROLL REVEAL
 // ==========================================
-
-function setupBackToTop() {
-    const btn = document.getElementById('back-to-top');
-    if (!btn) return;
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            btn.classList.add('visible');
-        } else {
-            btn.classList.remove('visible');
-        }
-    });
-
-    btn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-}
-
 function setupScrollReveal() {
-    const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Only animate once
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('active');
+                observer.unobserve(e.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    revealElements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal:not(.active)').forEach(el => observer.observe(el));
 }
 
+// ==========================================
+// 3D TILT
+// ==========================================
 function setup3DTilt(cards) {
     cards.forEach(card => {
         let ticking = false;
-
-        card.addEventListener('mousemove', (e) => {
-            // Ignore if we are hovering over a button
-            if (e.target.tagName.toLowerCase() === 'button' || e.target.tagName.toLowerCase() === 'a' || e.target.closest('.view-details-btn')) {
-                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1.02, 1.02, 1.02)`;
+        card.addEventListener('mousemove', e => {
+            if (e.target.closest('.view-details-btn') || e.target.tagName === 'A') {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1.01, 1.01, 1.01)';
                 return;
             }
-
             if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const rect = card.getBoundingClientRect();
-                    // Calculate center point of the card
-                    const x = e.clientX - rect.left - rect.width / 2;
-                    const y = e.clientY - rect.top - rect.height / 2;
-                    
-                    // Calculate rotation based on distance from center
-                    const rotateX = (y / rect.height) * -15; // Max 15 deg
-                    const rotateY = (x / rect.width) * 15;   // Max 15 deg
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                requestAnimationFrame(() => {
+                    const r  = card.getBoundingClientRect();
+                    const x  = e.clientX - r.left  - r.width  / 2;
+                    const y  = e.clientY - r.top   - r.height / 2;
+                    const rX = (y / r.height) * -12;
+                    const rY = (x / r.width)  *  12;
+                    card.style.transform = `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale3d(1.02, 1.02, 1.02)`;
                     ticking = false;
                 });
                 ticking = true;
             }
         });
-        
         card.addEventListener('mouseleave', () => {
-            // Reset to default on leave
-            card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
         });
     });
+}
+
+// ==========================================
+// BACK TO TOP
+// ==========================================
+function setupBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 350);
+    }, { passive: true });
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
