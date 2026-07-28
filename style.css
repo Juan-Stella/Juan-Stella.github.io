@@ -230,12 +230,12 @@ section { padding: 4rem 0; }
     padding: 3rem 0;
 }
 .profile-pic {
-    width: 84px;
-    height: 84px;
+    width: 112px;
+    height: 112px;
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid var(--border-strong);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 .hero-card h1 {
     font-size: 2.5rem;
