@@ -13,26 +13,20 @@ const T = {
         nav_skills:     'Skills',
         nav_projects:   'Proyectos',
         nav_contact:    'Contacto',
-        hero_badge:     '✦ Disponible para oportunidades',
-        hero_role:      'Ing. Mecatrónica',
-        hero_focus:     'Robótica, IA & Automatización Industrial',
-        hero_bio:       'Estudiante apasionado por construir sistemas inteligentes que perciben, razonan y actúan — con experiencia real en automatización industrial, PLC y SCADA.',
+        hero_role:      'Ingeniería Mecatrónica',
+        hero_focus:     'Robótica, IA y Automatización Industrial',
+        hero_bio:       'Estudiante de Ingeniería Mecatrónica con experiencia real en automatización industrial, PLC y SCADA.',
         hero_contact_btn: 'Contacto',
         about_title:    'Sobre mí',
-        about_p1:       'Soy estudiante de Ingeniería Mecatrónica con un interés particular en Robótica e Inteligencia Artificial. Me interesa la intersección entre el software y los sistemas físicos — desde manipuladores robóticos y visión por computadora hasta algoritmos de control embebido.',
-        about_p2:       'Además, cuento con experiencia profesional en automatización industrial: programación de PLC, sistemas SCADA/HMI y puesta en marcha de plantas en la industria embotelladora y de oil & gas. Busco sumarme a un equipo donde pueda formarme y crecer en un entorno profesional real, aplicando lo que aprendí y aprendiendo de quienes ya están construyendo tecnología de punta.',
+        about_p1:       'Soy estudiante de Ingeniería Mecatrónica con interés en Robótica e Inteligencia Artificial. Me interesa la intersección entre software y sistemas físicos: manipuladores robóticos, visión por computadora y algoritmos de control embebido.',
+        about_p2:       'Además, cuento con experiencia profesional en automatización industrial: programación de PLC, sistemas SCADA/HMI y puesta en marcha de plantas en la industria embotelladora y de oil & gas. Busco sumarme a un equipo donde pueda seguir formándome y aportar valor.',
         tag_degree:     'Ing. Mecatrónica',
-        tag_focus:      'Robótica & IA',
         edu_title:      'Educación',
         edu_degree:     'Ingeniería Mecatrónica',
         edu_school:     'Universidad Nacional de Cuyo · Mendoza, Argentina',
         edu_period:     'En curso',
         course_1: 'Robótica', course_2: 'Inteligencia Artificial', course_3: 'Control de Sistemas',
         course_4: 'Visión por Computadora', course_5: 'Microcontroladores', course_6: 'Máquinas Eléctricas',
-        stat_repos:     'Repositorios',
-        stat_stars:     'GitHub Stars',
-        stat_robotics:  'Proyectos Robóticos',
-        stat_ml:        'Modelos de ML',
         experience_title: 'Experiencia',
         exp1_role:      'Pasante',
         exp1_period:    '2026 – Presente',
@@ -47,8 +41,8 @@ const T = {
         exp3_b1:        'Desarrollo de contenidos y actividades de robótica básica para estudiantes de nivel primario.',
         skills_title:   'Skills',
         skills_lang:    'Lenguajes',
-        skills_robotics:'Robótica & Control',
-        skills_ai:      'IA & Visión',
+        skills_robotics:'Robótica y Control',
+        skills_ai:      'IA y Visión',
         skills_automation: 'Automatización Industrial',
         skill_kinematics: 'Cinemática',
         skill_trajectory: 'Trayectorias',
@@ -56,11 +50,10 @@ const T = {
         projects_title: 'Proyectos',
         filter_all:     'Todos',
         filter_robotics:'Robótica',
-        filter_ai:      'IA & ML',
+        filter_ai:      'IA y ML',
         filter_control: 'Control',
-        contact_title:  '¿Hablamos?',
-        contact_sub:    'Estoy abierto a oportunidades en robótica, IA, automatización industrial y sistemas embebidos. No dudes en escribirme.',
-        footer_text:    'Hecho con CSS Vanilla',
+        contact_title:  'Contacto',
+        contact_sub:    'Estoy abierto a oportunidades en robótica, IA, automatización industrial y sistemas embebidos.',
         details_btn:    'Ver detalles',
         github_btn:     'Ver Código',
         live_btn:       'Visitar Web',
@@ -71,26 +64,20 @@ const T = {
         nav_skills:     'Skills',
         nav_projects:   'Projects',
         nav_contact:    'Contact',
-        hero_badge:     '✦ Open to opportunities',
-        hero_role:      'Mechatronics Eng.',
+        hero_role:      'Mechatronics Engineering',
         hero_focus:     'Robotics, AI & Industrial Automation',
-        hero_bio:       'Student passionate about building intelligent systems that can perceive, reason, and act — with real experience in industrial automation, PLC, and SCADA.',
+        hero_bio:       'Mechatronics Engineering student with real experience in industrial automation, PLC, and SCADA.',
         hero_contact_btn: 'Contact',
-        about_title:    'About me',
-        about_p1:       "I'm a Mechatronics Engineering student with a particular interest in Robotics and Artificial Intelligence. I'm drawn to the intersection between software and physical systems — from robotic manipulators and computer vision to embedded control algorithms.",
-        about_p2:       "I also have hands-on professional experience in industrial automation: PLC programming, SCADA/HMI systems, and on-site commissioning in the bottling and oil & gas industries. I'm looking to join a team where I can grow and develop in a real professional environment, applying what I've learned and learning from those already building cutting-edge technology.",
+        about_title:    'About',
+        about_p1:       "Mechatronics Engineering student with interest in Robotics and AI. I'm drawn to the intersection between software and physical systems: robotic manipulators, computer vision, and embedded control.",
+        about_p2:       "I also have professional experience in industrial automation: PLC programming, SCADA/HMI systems, and on-site commissioning in the bottling and oil & gas industries. Looking to join a team where I can keep learning and adding value.",
         tag_degree:     'Mechatronics Eng.',
-        tag_focus:      'Robotics & AI',
         edu_title:      'Education',
         edu_degree:     'Mechatronics Engineering',
         edu_school:     'Universidad Nacional de Cuyo · Mendoza, Argentina',
         edu_period:     'In progress',
         course_1: 'Robotics', course_2: 'Artificial Intelligence', course_3: 'Control Systems',
         course_4: 'Computer Vision', course_5: 'Microcontrollers', course_6: 'Electric Machines',
-        stat_repos:     'Repositories',
-        stat_stars:     'GitHub Stars',
-        stat_robotics:  'Robotics Projects',
-        stat_ml:        'ML Models',
         experience_title: 'Experience',
         exp1_role:      'Intern',
         exp1_period:    '2026 – Present',
@@ -99,7 +86,7 @@ const T = {
         exp2_period:    '2024 – 2025',
         exp2_b1:        'Programmed and configured automated systems using PLCs (Rockwell, Schneider), including sensor and actuator integration.',
         exp2_b2:        'Implemented SCADA and HMI systems on iFix, FactoryTalk, and Studio 5000.',
-        exp2_b3:        'Carried out on-site commissioning and configured industrial devices (Exemys, Prosoft, Moxa).',
+        exp2_b3:        'On-site commissioning and configuration of industrial devices (Exemys, Prosoft, Moxa).',
         exp3_role:      'Educational Activities Designer & Instructor',
         exp3_period:    '2021',
         exp3_b1:        'Developed basic robotics content and activities for primary school students.',
@@ -116,9 +103,8 @@ const T = {
         filter_robotics:'Robotics',
         filter_ai:      'AI & ML',
         filter_control: 'Control',
-        contact_title:  "Let's talk!",
-        contact_sub:    "I'm open to opportunities in robotics, AI, industrial automation, and embedded systems. Feel free to reach out.",
-        footer_text:    'Built with Vanilla CSS',
+        contact_title:  'Contact',
+        contact_sub:    "Open to opportunities in robotics, AI, industrial automation, and embedded systems.",
         details_btn:    'View details',
         github_btn:     'View Code',
         live_btn:       'Live Site',
@@ -126,137 +112,129 @@ const T = {
 };
 
 // ==========================================
-// PROJECT DATA
+// PROJECT DATA (no stock images — text only)
 // ==========================================
 const localProjectData = {
     "Reconocimiento-de-imagenes": {
         category: "ai",
-        image: "https://images.unsplash.com/photo-1561557944-6e7860d1a7eb?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "OpenCV", "NumPy", "Scikit-Learn"],
         shortDescription: {
-            es: "Sistema de IA y visión computacional para clasificar objetos y planificar su transporte mediante algoritmos avanzados (KNN, KMeans, STRIPS, A*).",
-            en: "AI and computer vision system to classify objects and plan their transport using advanced algorithms (KNN, KMeans, STRIPS, A*)."
+            es: "Sistema de IA y visión por computadora para clasificar objetos y planificar su transporte (KNN, KMeans, STRIPS, A*).",
+            en: "AI and computer vision system to classify objects and plan their transport (KNN, KMeans, STRIPS, A*)."
         },
         fullText: `
             <h1>Reconocimiento de Imágenes y Planificación</h1>
-            <p>Este proyecto integra técnicas de IA y visión por computadora para clasificar y organizar objetos de forma autónoma.</p>
-            <h2>Características principales</h2>
+            <p>Integración de técnicas de IA y visión por computadora para clasificar y organizar objetos de forma autónoma.</p>
+            <h2>Características</h2>
             <ul>
-                <li><strong>Procesamiento visual:</strong> Pre-procesamiento y extracción de características usando algoritmos <code>KNN</code> y <code>KMeans</code>.</li>
-                <li><strong>Planificación lógica:</strong> Algoritmo <strong>STRIPS</strong> para determinar cómo acomodar cajas con los objetos detectados.</li>
-                <li><strong>Pathfinding:</strong> Implementación de <strong>A*</strong> para encontrar la ruta óptima de transporte.</li>
+                <li><strong>Procesamiento visual:</strong> extracción de características con <code>KNN</code> y <code>KMeans</code>.</li>
+                <li><strong>Planificación lógica:</strong> algoritmo <strong>STRIPS</strong> para acomodar cajas con los objetos detectados.</li>
+                <li><strong>Pathfinding:</strong> <strong>A*</strong> para encontrar la ruta óptima de transporte.</li>
             </ul>
         `
     },
     "Proyecto-Final-Robotica-1": {
         category: "robotics",
-        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800",
         languages: ["MATLAB", "Simulink", "Robotics Toolbox"],
         shortDescription: {
-            es: "Análisis de cinemática directa/inversa y control de trayectorias para el brazo robótico Franka Emika Panda (7 DOF) en MATLAB.",
-            en: "Forward/inverse kinematics analysis and trajectory control for the Franka Emika Panda robotic arm (7 DOF) in MATLAB."
+            es: "Cinemática directa/inversa y control de trayectorias para el brazo robótico Franka Emika Panda (7 DOF) en MATLAB.",
+            en: "Forward/inverse kinematics and trajectory control for the Franka Emika Panda robotic arm (7 DOF) in MATLAB."
         },
         fullText: `
             <h1>Control del Franka Emika Panda</h1>
-            <p>Análisis exhaustivo de cinemática para el manipulador robótico de 7 grados de libertad "Franka Emika Panda" en MATLAB.</p>
+            <p>Análisis de cinemática para el manipulador robótico de 7 grados de libertad Franka Emika Panda en MATLAB.</p>
             <h2>Desarrollo</h2>
             <ul>
-                <li><strong>Cinemática Directa e Inversa:</strong> Modelado matemático para determinar la posición del efector final y los ángulos de cada articulación.</li>
-                <li><strong>Análisis Jacobiano:</strong> Estudio de velocidades, mapeo de fuerzas y singularidades mecánicas.</li>
-                <li><strong>Generación de Trayectorias:</strong> Planificación de movimientos suaves y óptimos en el espacio operativo.</li>
+                <li><strong>Cinemática directa e inversa:</strong> modelado matemático de la posición del efector final y ángulos articulares.</li>
+                <li><strong>Análisis Jacobiano:</strong> velocidades, mapeo de fuerzas y singularidades mecánicas.</li>
+                <li><strong>Generación de trayectorias:</strong> planificación de movimientos suaves en el espacio operativo.</li>
             </ul>
         `
     },
     "Breast-Cancer-Classification---Logistic-Regression-main": {
         category: "ai",
-        image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "Pandas", "Matplotlib", "NumPy"],
         shortDescription: {
-            es: "Implementación matemática desde cero de un modelo predictivo de Regresión Logística para clasificación de cáncer de mama.",
-            en: "Mathematical implementation from scratch of a Logistic Regression predictive model for breast cancer classification."
+            es: "Implementación desde cero de un modelo de Regresión Logística para clasificación de cáncer de mama.",
+            en: "From-scratch implementation of a Logistic Regression model for breast cancer classification."
         },
         fullText: `
             <h1>Clasificación de Cáncer de Mama</h1>
             <p>Implementación desde cero en Python de un modelo predictivo basado en Regresión Logística.</p>
-            <h2>Detalles clave</h2>
+            <h2>Detalles</h2>
             <ul>
-                <li>Desarrollo de la función Sigmoide y matemáticas fundamentales del modelo.</li>
-                <li>Entrenamiento iterativo mediante descenso de gradiente.</li>
-                <li>Evaluación de precisión (Accuracy) para distinguir tejidos malignos de benignos.</li>
+                <li>Desarrollo de la función Sigmoide y matemáticas del modelo.</li>
+                <li>Entrenamiento iterativo con descenso de gradiente.</li>
+                <li>Evaluación de precisión para distinguir tejidos malignos de benignos.</li>
             </ul>
         `
     },
     "IA2": {
         category: "ai",
-        image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "Deep Learning"],
         shortDescription: {
-            es: "Repositorio de prácticas avanzadas de IA: redes neuronales, machine learning y técnicas analíticas de datos.",
-            en: "Advanced AI practices repository: neural networks, machine learning and data analytics techniques."
+            es: "Prácticas avanzadas de IA: redes neuronales, machine learning y análisis de datos.",
+            en: "Advanced AI practices: neural networks, machine learning, and data analysis."
         },
         fullText: `
             <h1>Inteligencia Artificial 2</h1>
-            <p>Repositorio contenedor de las prácticas avanzadas de la materia IA2.</p>
-            <p>Incluye implementaciones prácticas y experimentación con distintos modelos de redes neuronales, machine learning y técnicas analíticas de datos.</p>
+            <p>Repositorio con prácticas avanzadas de la materia IA2.</p>
+            <p>Implementaciones y experimentación con modelos de redes neuronales, machine learning y técnicas analíticas de datos.</p>
         `
     },
     "Automatica-y-maquinas-electricas-final": {
         category: "control",
-        image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?auto=format&fit=crop&q=80&w=800",
         languages: ["MATLAB", "Simulink", "Control Systems"],
         shortDescription: {
-            es: "Simulaciones y control automático de plantas físicas y sistemas eléctricos desarrollados en MATLAB/Simulink.",
-            en: "Simulations and automatic control of physical plants and electrical systems developed in MATLAB/Simulink."
+            es: "Simulaciones y control automático de plantas físicas y sistemas eléctricos en MATLAB/Simulink.",
+            en: "Simulations and automatic control of physical plants and electrical systems in MATLAB/Simulink."
         },
         fullText: `
             <h1>Automática y Máquinas Eléctricas</h1>
-            <p>Resolución práctica, simulaciones y reporte final de la materia Automática y Máquinas Eléctricas.</p>
+            <p>Resolución práctica, simulaciones y reporte final de la materia.</p>
             <h2>Herramientas</h2>
             <ul>
-                <li><strong>MATLAB / Simulink:</strong> Modelado, simulación de plantas físicas y análisis de respuesta en tiempo/frecuencia de sistemas de control eléctricos.</li>
+                <li><strong>MATLAB / Simulink:</strong> modelado, simulación y análisis de respuesta en tiempo/frecuencia de sistemas de control eléctricos.</li>
             </ul>
         `
     },
     "Control-y-Sistemas": {
         category: "control",
-        image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800",
         languages: ["C", "Microcontroladores"],
         shortDescription: {
-            es: "Algoritmos robustos en C para el control de sistemas electrónicos y hardware de microcontroladores de bajo nivel.",
-            en: "Robust C algorithms for controlling electronic systems and low-level microcontroller hardware."
+            es: "Algoritmos en C para el control de sistemas electrónicos y microcontroladores de bajo nivel.",
+            en: "C algorithms for electronic systems and low-level microcontroller control."
         },
         fullText: `
             <h1>Control y Sistemas</h1>
-            <p>Repositorio enfocado en implementaciones en lenguaje <code>C</code> para el control de sistemas electrónicos y microcontroladores.</p>
-            <p>Los algoritmos abarcan desde el procesamiento de señales de sensores en tiempo real hasta la actuación sobre plantas físicas usando teorías del control clásico.</p>
+            <p>Repositorio enfocado en implementaciones en <code>C</code> para el control de sistemas electrónicos y microcontroladores.</p>
+            <p>Los algoritmos abarcan desde procesamiento de señales de sensores en tiempo real hasta actuación sobre plantas físicas con teoría de control clásico.</p>
         `
     },
     "Multiple-Linear-Regression": {
         category: "ai",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "Math"],
         shortDescription: {
-            es: "Construcción manual desde cero de un modelo de regresión lineal múltiple para predicción de variables.",
-            en: "Manual from-scratch construction of a multiple linear regression model for variable prediction."
+            es: "Construcción manual desde cero de un modelo de regresión lineal múltiple.",
+            en: "From-scratch manual construction of a multiple linear regression model."
         },
         fullText: `
             <h1>Regresión Lineal Múltiple Manual</h1>
-            <p>Primera inmersión profunda en el análisis de variables múltiples construyendo un modelo de regresión lineal completamente manual en Python.</p>
-            <p>El objetivo es desglosar la "caja negra" del modelo estadístico, entendiendo paso a paso cómo interactúan múltiples variables predictoras con el resultado final.</p>
+            <p>Análisis de variables múltiples construyendo un modelo de regresión lineal completamente manual en Python.</p>
+            <p>El objetivo es desglosar el modelo estadístico y entender cómo interactúan las variables predictoras con el resultado.</p>
         `
     },
     "Multiple-Linear-with-Scikitlearn": {
         category: "ai",
-        image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&q=80&w=800",
         languages: ["Python", "Scikit-Learn", "Machine Learning"],
         shortDescription: {
-            es: "Abordaje predictivo optimizado con Scikit-Learn: modelos de regresión preparados para flujos de trabajo profesionales.",
-            en: "Optimized predictive approach using Scikit-Learn: regression models ready for professional workflows."
+            es: "Abordaje predictivo optimizado con Scikit-Learn: modelos de regresión listos para flujos profesionales.",
+            en: "Optimized predictive approach with Scikit-Learn: regression models ready for professional workflows."
         },
         fullText: `
             <h1>Regresión Lineal con Scikit-Learn</h1>
             <p>El mismo abordaje predictivo de la regresión lineal manual, implementado con <strong>scikit-learn</strong>.</p>
-            <p>Demuestra la optimización de código, eficiencia escalable, y preparación para integrarse a flujos profesionales como cross-validation y data pipelines.</p>
+            <p>Optimización de código, eficiencia escalable y preparación para flujos profesionales (cross-validation, data pipelines).</p>
         `
     }
 };
@@ -296,7 +274,6 @@ function setupLangToggle() {
         document.getElementById('lang-es').classList.toggle('active', currentLang === 'es');
         document.getElementById('lang-en').classList.toggle('active', currentLang === 'en');
         applyTranslations();
-        // Re-render project descriptions if loaded
         if (allRepos.length > 0) renderProjects(allRepos);
     });
 }
@@ -307,7 +284,6 @@ function applyTranslations() {
         const key = el.getAttribute('data-i18n');
         if (t[key] !== undefined) el.textContent = t[key];
     });
-    // Update html lang attribute
     document.documentElement.lang = currentLang;
 }
 
@@ -350,19 +326,12 @@ async function fetchGitHubProfile() {
 
         const img  = document.getElementById('profile-img');
         const name = document.getElementById('profile-name');
-        const bio  = document.getElementById('profile-bio');
         const link = document.getElementById('github-link');
 
         if (img)  img.src = user.avatar_url;
         if (name) name.textContent = user.name || user.login;
         if (link) link.href = user.html_url;
-        // Keep translated bio instead of GitHub bio
         document.title = `${user.name || user.login} | Ing. Mecatrónica`;
-
-        // Stats
-        const reposStat = document.getElementById('stat-repos');
-        if (reposStat) reposStat.textContent = user.public_repos ?? '–';
-
     } catch {
         console.warn('Could not load GitHub profile.');
     }
@@ -381,15 +350,9 @@ async function fetchGitHubProjects() {
         const portfolioName = `${GITHUB_USERNAME}.github.io`.toLowerCase();
         allRepos = repos.filter(r => !r.fork && r.name.toLowerCase() !== portfolioName);
 
-        // Calculate total stars
-        const totalStars = allRepos.reduce((acc, r) => acc + r.stargazers_count, 0);
-        const starsStat  = document.getElementById('stat-stars');
-        if (starsStat) starsStat.textContent = totalStars;
-
         renderProjects(allRepos);
-
     } catch {
-        if (grid) grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--text-muted)">No se pudieron cargar los proyectos.</p>';
+        if (grid) grid.innerHTML = '<p style="grid-column:1/-1;color:var(--text-muted);font-size:0.9rem">No se pudieron cargar los proyectos.</p>';
     }
 }
 
@@ -399,11 +362,11 @@ function renderProjects(repos) {
     grid.innerHTML = '';
 
     if (repos.length === 0) {
-        grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:var(--text-muted)">No se encontraron repositorios.</p>';
+        grid.innerHTML = '<p style="grid-column:1/-1;color:var(--text-muted);font-size:0.9rem">No se encontraron repositorios.</p>';
         return;
     }
 
-    repos.forEach((repo, i) => {
+    repos.forEach((repo) => {
         const custom      = localProjectData[repo.name];
         const category    = custom?.category || 'other';
         const desc        = custom?.shortDescription
@@ -416,11 +379,11 @@ function renderProjects(repos) {
         } else if (repo.language) {
             langsHTML = `<span class="tech-tag">${repo.language}</span>`;
         } else {
-            langsHTML = `<span class="tech-tag">–</span>`;
+            langsHTML = '';
         }
 
         const date = new Date(repo.updated_at).toLocaleDateString(currentLang === 'es' ? 'es-ES' : 'en-US', {
-            year: 'numeric', month: 'short', day: 'numeric'
+            year: 'numeric', month: 'short'
         });
 
         const isHidden = currentFilter !== 'all' && category !== currentFilter;
@@ -428,7 +391,6 @@ function renderProjects(repos) {
         const card = document.createElement('div');
         card.className = `project-card reveal${isHidden ? ' hidden' : ''}`;
         card.setAttribute('data-category', category);
-        card.style.transitionDelay = `${i * 60}ms`;
 
         card.innerHTML = `
             <div class="project-header">
@@ -445,14 +407,13 @@ function renderProjects(repos) {
             <div class="project-stats">
                 <span><i class="far fa-star"></i> ${repo.stargazers_count}</span>
                 <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
-                <span style="margin-left:auto;font-size:0.78rem"><i class="far fa-clock"></i> ${date}</span>
+                <span style="margin-left:auto"><i class="far fa-clock"></i> ${date}</span>
             </div>
         `;
 
         grid.appendChild(card);
     });
 
-    // Bind detail buttons
     grid.querySelectorAll('.view-details-btn').forEach(btn => {
         btn.addEventListener('click', e => {
             e.stopPropagation();
@@ -463,7 +424,6 @@ function renderProjects(repos) {
     });
 
     setupScrollReveal();
-    setup3DTilt(grid.querySelectorAll('.project-card'));
 }
 
 // ==========================================
@@ -511,7 +471,7 @@ async function openModal(repoName, repoUrl, homepage) {
     const footer    = document.getElementById('modal-links');
     if (!overlay || !body || !footer) return;
 
-    body.innerHTML   = '<p style="text-align:center;color:var(--text-muted);padding:2rem">Cargando…</p>';
+    body.innerHTML   = '<p style="color:var(--text-muted);padding:1rem 0">Cargando…</p>';
     footer.innerHTML = '';
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -519,10 +479,7 @@ async function openModal(repoName, repoUrl, homepage) {
     const custom = localProjectData[repoName];
 
     if (custom) {
-        body.innerHTML = `
-            ${custom.image ? `<img src="${custom.image}" alt="${repoName}" style="width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:1.5rem">` : ''}
-            <div>${custom.fullText}</div>
-        `;
+        body.innerHTML = `<div>${custom.fullText}</div>`;
     } else {
         try {
             const res  = await fetch(`https://api.github.com/repos/${GITHUB_USERNAME}/${repoName}/readme`);
@@ -536,10 +493,10 @@ async function openModal(repoName, repoUrl, homepage) {
     }
 
     footer.innerHTML = `
-        <a href="${repoUrl}" target="_blank" class="btn btn-outline" style="font-size:0.88rem;padding:0.45rem 1rem">
+        <a href="${repoUrl}" target="_blank" class="btn btn-outline">
             <i class="fab fa-github"></i> ${t('github_btn')}
         </a>
-        ${homepage ? `<a href="${homepage}" target="_blank" class="btn btn-primary" style="font-size:0.88rem;padding:0.45rem 1rem">
+        ${homepage ? `<a href="${homepage}" target="_blank" class="btn btn-primary">
             <i class="fas fa-external-link-alt"></i> ${t('live_btn')}
         </a>` : ''}
     `;
@@ -559,36 +516,6 @@ function setupScrollReveal() {
     }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.reveal:not(.active)').forEach(el => observer.observe(el));
-}
-
-// ==========================================
-// 3D TILT
-// ==========================================
-function setup3DTilt(cards) {
-    cards.forEach(card => {
-        let ticking = false;
-        card.addEventListener('mousemove', e => {
-            if (e.target.closest('.view-details-btn') || e.target.tagName === 'A') {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1.01, 1.01, 1.01)';
-                return;
-            }
-            if (!ticking) {
-                requestAnimationFrame(() => {
-                    const r  = card.getBoundingClientRect();
-                    const x  = e.clientX - r.left  - r.width  / 2;
-                    const y  = e.clientY - r.top   - r.height / 2;
-                    const rX = (y / r.height) * -12;
-                    const rY = (x / r.width)  *  12;
-                    card.style.transform = `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale3d(1.02, 1.02, 1.02)`;
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
-        });
-    });
 }
 
 // ==========================================

@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan Stella | Ing. Mecatrónica</title>
-    <meta name="description" content="Portfolio de Juan Stella — Estudiante de Ingeniería Mecatrónica especializado en Robótica e IA.">
+    <meta name="description" content="Portfolio de Juan Stella — Ingeniería Mecatrónica, Robótica y Automatización Industrial.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -15,22 +15,16 @@
 </head>
 <body>
 
-    <!-- Background -->
-    <div class="bg-canvas">
-        <div class="bg-orb orb-1"></div>
-        <div class="bg-orb orb-2"></div>
-    </div>
-
     <!-- ========== NAVBAR ========== -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">JS<span class="logo-dot">.</span></a>
+            <a href="#hero" class="nav-logo">JS</a>
             <ul class="nav-links">
-                <li><a href="#about"   data-i18n="nav_about">Sobre mí</a></li>
+                <li><a href="#about"      data-i18n="nav_about">Sobre mí</a></li>
                 <li><a href="#experience" data-i18n="nav_experience">Experiencia</a></li>
-                <li><a href="#skills"  data-i18n="nav_skills">Skills</a></li>
-                <li><a href="#projects" data-i18n="nav_projects">Proyectos</a></li>
-                <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+                <li><a href="#skills"     data-i18n="nav_skills">Skills</a></li>
+                <li><a href="#projects"   data-i18n="nav_projects">Proyectos</a></li>
+                <li><a href="#contact"    data-i18n="nav_contact">Contacto</a></li>
             </ul>
             <div class="nav-actions">
                 <button id="lang-toggle" class="lang-btn" aria-label="Cambiar idioma">
@@ -44,18 +38,18 @@
             </div>
         </div>
         <div id="mobile-menu" class="mobile-menu">
-            <a href="#about"    data-i18n="nav_about">Sobre mí</a>
+            <a href="#about"      data-i18n="nav_about">Sobre mí</a>
             <a href="#experience" data-i18n="nav_experience">Experiencia</a>
-            <a href="#skills"   data-i18n="nav_skills">Skills</a>
-            <a href="#projects" data-i18n="nav_projects">Proyectos</a>
-            <a href="#contact"  data-i18n="nav_contact">Contacto</a>
+            <a href="#skills"     data-i18n="nav_skills">Skills</a>
+            <a href="#projects"   data-i18n="nav_projects">Proyectos</a>
+            <a href="#contact"    data-i18n="nav_contact">Contacto</a>
         </div>
     </nav>
 
     <!-- ========== HERO ========== -->
     <section id="hero">
         <div class="container">
-            <div class="hero-card glass-panel">
+            <div class="hero-card">
                 <img id="profile-img"
                      src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
                      alt="Juan Stella"
@@ -63,76 +57,47 @@
                      loading="lazy">
                 <h1 id="profile-name">Juan Stella</h1>
                 <p class="hero-role">
-                    <span class="role-highlight" data-i18n="hero_role">Ing. Mecatrónica</span>
+                    <span data-i18n="hero_role">Ingeniería Mecatrónica</span>
                     <span class="role-sep">·</span>
-                    <span data-i18n="hero_focus">Robótica &amp; IA</span>
+                    <span data-i18n="hero_focus">Robótica, IA y Automatización Industrial</span>
                 </p>
                 <p id="profile-bio" class="hero-bio" data-i18n="hero_bio">
-                    Estudiante apasionado por construir sistemas inteligentes que perciben, razonan y actúan.
+                    Estudiante de Ingeniería Mecatrónica con experiencia real en automatización industrial, PLC y SCADA.
                 </p>
                 <div class="hero-ctas">
                     <a id="github-link" href="https://github.com/Juan-Stella" target="_blank" class="btn btn-primary">
                         <i class="fab fa-github"></i> GitHub
                     </a>
-                    <a href="https://www.linkedin.com/in/juan-stella-/" target="_blank" class="btn btn-outline btn-linkedin">
+                    <a href="https://www.linkedin.com/in/juan-stella-/" target="_blank" class="btn btn-outline">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
                     <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-paper-plane"></i> <span data-i18n="hero_contact_btn">Contacto</span>
+                        <i class="fas fa-envelope"></i> <span data-i18n="hero_contact_btn">Contacto</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== MARQUEE ========== -->
-    <div class="marquee-wrapper">
-        <div class="marquee-track">
-            <span><i class="fab fa-python"></i> Python</span>
-            <span><i class="fas fa-microchip"></i> C / C++</span>
-            <span><i class="fas fa-cogs"></i> MATLAB</span>
-            <span><i class="fas fa-project-diagram"></i> Simulink</span>
-            <span><i class="fas fa-robot"></i> Robótica</span>
-            <span><i class="fas fa-eye"></i> OpenCV</span>
-            <span><i class="fas fa-brain"></i> Machine Learning</span>
-            <span><i class="fab fa-git-alt"></i> Git</span>
-            <span><i class="fas fa-network-wired"></i> Deep Learning</span>
-            <span><i class="fas fa-drafting-compass"></i> Cinemática</span>
-            <!-- Duplicated for seamless loop -->
-            <span><i class="fab fa-python"></i> Python</span>
-            <span><i class="fas fa-microchip"></i> C / C++</span>
-            <span><i class="fas fa-cogs"></i> MATLAB</span>
-            <span><i class="fas fa-project-diagram"></i> Simulink</span>
-            <span><i class="fas fa-robot"></i> Robótica</span>
-            <span><i class="fas fa-eye"></i> OpenCV</span>
-            <span><i class="fas fa-brain"></i> Machine Learning</span>
-            <span><i class="fab fa-git-alt"></i> Git</span>
-            <span><i class="fas fa-network-wired"></i> Deep Learning</span>
-            <span><i class="fas fa-drafting-compass"></i> Cinemática</span>
-        </div>
-    </div>
-
     <!-- ========== ABOUT ========== -->
     <section id="about">
         <div class="container">
             <h2 class="section-title" data-i18n="about_title">Sobre mí</h2>
             <div class="about-grid">
-
-                <div class="about-text glass-panel reveal">
+                <div class="about-text card reveal">
                     <p data-i18n="about_p1">
-                        Soy estudiante de Ingeniería Mecatrónica con un interés particular en Robótica e Inteligencia Artificial. Me interesa la intersección entre el software y los sistemas físicos — desde manipuladores robóticos y visión por computadora hasta algoritmos de control embebido.
+                        Soy estudiante de Ingeniería Mecatrónica con interés en Robótica e Inteligencia Artificial. Me interesa la intersección entre software y sistemas físicos: manipuladores robóticos, visión por computadora y algoritmos de control embebido.
                     </p>
                     <p data-i18n="about_p2">
-                        Busco sumarme a un equipo donde pueda formarme y crecer en un entorno profesional real, aplicando lo que aprendí y aprendiendo de quienes ya están construyendo tecnología de punta.
+                        Además, cuento con experiencia profesional en automatización industrial: programación de PLC, sistemas SCADA/HMI y puesta en marcha de plantas en la industria embotelladora y de oil & gas. Busco sumarme a un equipo donde pueda seguir formándome y aportar valor.
                     </p>
                     <div class="about-tags">
                         <span class="tag"><i class="fas fa-map-marker-alt"></i> Mendoza, Argentina</span>
                         <span class="tag"><i class="fas fa-graduation-cap"></i> <span data-i18n="tag_degree">Ing. Mecatrónica</span></span>
-                        <span class="tag"><i class="fas fa-robot"></i> <span data-i18n="tag_focus">Robótica &amp; IA</span></span>
                     </div>
 
                     <div class="education-block">
-                        <h3 class="edu-title"><i class="fas fa-university"></i> <span data-i18n="edu_title">Educación</span></h3>
+                        <h3 class="edu-title"><span data-i18n="edu_title">Educación</span></h3>
                         <div class="edu-item">
                             <div class="edu-degree" data-i18n="edu_degree">Ingeniería Mecatrónica</div>
                             <div class="edu-school" data-i18n="edu_school">Universidad Nacional de Cuyo · Mendoza, Argentina</div>
@@ -148,8 +113,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </section>
@@ -158,56 +121,56 @@
     <section id="experience">
         <div class="container">
             <h2 class="section-title" data-i18n="experience_title">Experiencia</h2>
-            <div class="experience-list">
+            <div class="timeline">
 
-                <div class="experience-item glass-panel reveal">
-                    <div class="exp-header">
-                        <div class="exp-heading">
-                            <i class="fas fa-magnifying-glass exp-icon"></i>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
                             <div>
                                 <div class="exp-role" data-i18n="exp1_role">Pasante</div>
                                 <div class="exp-company">NOV Tuboscope Vetco de Argentina · Mendoza, Argentina</div>
                             </div>
+                            <div class="exp-period" data-i18n="exp1_period">2026 – Presente</div>
                         </div>
-                        <div class="exp-period" data-i18n="exp1_period">2026 – Presente</div>
+                        <ul class="exp-bullets">
+                            <li data-i18n="exp1_b1">Participación en proyectos de investigación y mejora continua de procesos en el área de inspección no destructiva (NDT), aplicando criterios de control de calidad y automatización.</li>
+                        </ul>
                     </div>
-                    <ul class="exp-bullets">
-                        <li data-i18n="exp1_b1">Participación en proyectos de investigación y mejora continua de procesos en el área de inspección no destructiva (NDT), aplicando criterios de control de calidad y automatización.</li>
-                    </ul>
                 </div>
 
-                <div class="experience-item glass-panel reveal">
-                    <div class="exp-header">
-                        <div class="exp-heading">
-                            <i class="fas fa-industry exp-icon"></i>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
                             <div>
                                 <div class="exp-role" data-i18n="exp2_role">Ingeniería en Automatización</div>
                                 <div class="exp-company">ACI Ingeniería S.A. · Mendoza, Argentina</div>
                             </div>
+                            <div class="exp-period" data-i18n="exp2_period">2024 – 2025</div>
                         </div>
-                        <div class="exp-period" data-i18n="exp2_period">2024 – 2025</div>
+                        <ul class="exp-bullets">
+                            <li data-i18n="exp2_b1">Programación y configuración de sistemas automatizados con PLCs (Rockwell, Schneider), incluyendo integración de sensores y actuadores.</li>
+                            <li data-i18n="exp2_b2">Implementación de sistemas SCADA y HMI en iFix, FactoryTalk y Studio 5000.</li>
+                            <li data-i18n="exp2_b3">Puesta en marcha en sitio y configuración de dispositivos industriales (Exemys, Prosoft, Moxa).</li>
+                        </ul>
                     </div>
-                    <ul class="exp-bullets">
-                        <li data-i18n="exp2_b1">Programación y configuración de sistemas automatizados con PLCs (Rockwell, Schneider), incluyendo integración de sensores y actuadores.</li>
-                        <li data-i18n="exp2_b2">Implementación de sistemas SCADA y HMI en iFix, FactoryTalk y Studio 5000.</li>
-                        <li data-i18n="exp2_b3">Puesta en marcha en sitio y configuración de dispositivos industriales (Exemys, Prosoft, Moxa).</li>
-                    </ul>
                 </div>
 
-                <div class="experience-item glass-panel reveal">
-                    <div class="exp-header">
-                        <div class="exp-heading">
-                            <i class="fas fa-chalkboard-teacher exp-icon"></i>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="exp-header">
                             <div>
                                 <div class="exp-role" data-i18n="exp3_role">Diseñador e Instructor de Actividades Educativas</div>
                                 <div class="exp-company">Cerebro Curioso · Mendoza, Argentina</div>
                             </div>
+                            <div class="exp-period" data-i18n="exp3_period">2021</div>
                         </div>
-                        <div class="exp-period" data-i18n="exp3_period">2021</div>
+                        <ul class="exp-bullets">
+                            <li data-i18n="exp3_b1">Desarrollo de contenidos y actividades de robótica básica para estudiantes de nivel primario.</li>
+                        </ul>
                     </div>
-                    <ul class="exp-bullets">
-                        <li data-i18n="exp3_b1">Desarrollo de contenidos y actividades de robótica básica para estudiantes de nivel primario.</li>
-                    </ul>
                 </div>
 
             </div>
@@ -220,58 +183,46 @@
             <h2 class="section-title" data-i18n="skills_title">Skills</h2>
             <div class="skills-grid">
 
-                <div class="skill-category glass-panel reveal">
-                    <h3 class="skill-cat-title">
-                        <i class="fas fa-terminal"></i>
-                        <span data-i18n="skills_lang">Lenguajes</span>
-                    </h3>
+                <div class="skill-category card reveal">
+                    <h3 class="skill-cat-title" data-i18n="skills_lang">Lenguajes</h3>
                     <div class="skill-pills">
-                        <div class="skill-pill"><i class="fab fa-python"></i> Python</div>
-                        <div class="skill-pill"><i class="fas fa-microchip"></i> C</div>
-                        <div class="skill-pill"><i class="fas fa-microchip"></i> C++</div>
-                        <div class="skill-pill"><i class="fas fa-square-root-alt"></i> MATLAB</div>
-                        <div class="skill-pill"><i class="fab fa-git-alt"></i> Git</div>
+                        <div class="skill-pill">Python</div>
+                        <div class="skill-pill">C</div>
+                        <div class="skill-pill">C++</div>
+                        <div class="skill-pill">MATLAB</div>
+                        <div class="skill-pill">Git</div>
                     </div>
                 </div>
 
-                <div class="skill-category glass-panel reveal">
-                    <h3 class="skill-cat-title">
-                        <i class="fas fa-robot"></i>
-                        <span data-i18n="skills_robotics">Robótica &amp; Control</span>
-                    </h3>
+                <div class="skill-category card reveal">
+                    <h3 class="skill-cat-title" data-i18n="skills_robotics">Robótica y Control</h3>
                     <div class="skill-pills">
-                        <div class="skill-pill"><i class="fas fa-project-diagram"></i> Simulink</div>
-                        <div class="skill-pill"><i class="fas fa-robot"></i> Robotics Toolbox</div>
-                        <div class="skill-pill"><i class="fas fa-drafting-compass"></i> <span data-i18n="skill_kinematics">Cinemática</span></div>
-                        <div class="skill-pill"><i class="fas fa-route"></i> <span data-i18n="skill_trajectory">Trayectorias</span></div>
-                        <div class="skill-pill"><i class="fas fa-sliders-h"></i> <span data-i18n="skill_control">Control Clásico</span></div>
+                        <div class="skill-pill">Simulink</div>
+                        <div class="skill-pill">Robotics Toolbox</div>
+                        <div class="skill-pill" data-i18n="skill_kinematics">Cinemática</div>
+                        <div class="skill-pill" data-i18n="skill_trajectory">Trayectorias</div>
+                        <div class="skill-pill" data-i18n="skill_control">Control Clásico</div>
                     </div>
                 </div>
 
-                <div class="skill-category glass-panel reveal">
-                    <h3 class="skill-cat-title">
-                        <i class="fas fa-brain"></i>
-                        <span data-i18n="skills_ai">IA &amp; Visión</span>
-                    </h3>
+                <div class="skill-category card reveal">
+                    <h3 class="skill-cat-title" data-i18n="skills_ai">IA y Visión</h3>
                     <div class="skill-pills">
-                        <div class="skill-pill"><i class="fas fa-eye"></i> OpenCV</div>
-                        <div class="skill-pill"><i class="fas fa-brain"></i> Scikit-Learn</div>
-                        <div class="skill-pill"><i class="fas fa-table"></i> NumPy · Pandas</div>
-                        <div class="skill-pill"><i class="fas fa-network-wired"></i> Deep Learning</div>
-                        <div class="skill-pill"><i class="fas fa-chart-line"></i> Matplotlib</div>
+                        <div class="skill-pill">OpenCV</div>
+                        <div class="skill-pill">Scikit-Learn</div>
+                        <div class="skill-pill">NumPy · Pandas</div>
+                        <div class="skill-pill">Deep Learning</div>
+                        <div class="skill-pill">Matplotlib</div>
                     </div>
                 </div>
 
-                <div class="skill-category glass-panel reveal">
-                    <h3 class="skill-cat-title">
-                        <i class="fas fa-industry"></i>
-                        <span data-i18n="skills_automation">Automatización Industrial</span>
-                    </h3>
+                <div class="skill-category card reveal">
+                    <h3 class="skill-cat-title" data-i18n="skills_automation">Automatización Industrial</h3>
                     <div class="skill-pills">
-                        <div class="skill-pill"><i class="fas fa-microchip"></i> PLC (Rockwell, Schneider)</div>
-                        <div class="skill-pill"><i class="fas fa-desktop"></i> SCADA (iFix, FactoryTalk)</div>
-                        <div class="skill-pill"><i class="fas fa-sliders-h"></i> HMI (Studio 5000)</div>
-                        <div class="skill-pill"><i class="fas fa-network-wired"></i> Exemys · Prosoft · Moxa</div>
+                        <div class="skill-pill">PLC (Rockwell, Schneider)</div>
+                        <div class="skill-pill">SCADA (iFix, FactoryTalk)</div>
+                        <div class="skill-pill">HMI (Studio 5000)</div>
+                        <div class="skill-pill">Exemys · Prosoft · Moxa</div>
                     </div>
                 </div>
 
@@ -286,7 +237,7 @@
             <div class="filter-tabs">
                 <button class="filter-btn active" data-filter="all"      data-i18n="filter_all">Todos</button>
                 <button class="filter-btn"         data-filter="robotics" data-i18n="filter_robotics">Robótica</button>
-                <button class="filter-btn"         data-filter="ai"       data-i18n="filter_ai">IA &amp; ML</button>
+                <button class="filter-btn"         data-filter="ai"       data-i18n="filter_ai">IA y ML</button>
                 <button class="filter-btn"         data-filter="control"  data-i18n="filter_control">Control</button>
             </div>
             <div id="projects-grid" class="projects-grid">
@@ -303,17 +254,17 @@
     <!-- ========== CONTACT ========== -->
     <section id="contact">
         <div class="container">
-            <div class="contact-inner glass-panel reveal">
-                <div class="contact-icon"><i class="fas fa-satellite-dish"></i></div>
-                <h2 data-i18n="contact_title">¿Hablamos?</h2>
+            <div class="contact-inner card reveal">
+                <h2 data-i18n="contact_title">Contacto</h2>
+                <p data-i18n="contact_sub">Estoy abierto a oportunidades en robótica, IA, automatización industrial y sistemas embebidos.</p>
                 <div class="contact-links">
                     <a href="mailto:juanstella96@gmail.com" class="btn btn-primary">
                         <i class="fas fa-envelope"></i> juanstella96@gmail.com
                     </a>
-                    <a href="https://www.linkedin.com/in/juan-stella-/" target="_blank" class="btn btn-outline btn-linkedin">
+                    <a href="https://www.linkedin.com/in/juan-stella-/" target="_blank" class="btn btn-outline">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://wa.me/542614712199" target="_blank" class="btn btn-outline btn-whatsapp">
+                    <a href="https://wa.me/542614712199" target="_blank" class="btn btn-outline">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
                 </div>
@@ -323,7 +274,7 @@
 
     <!-- ========== MODAL ========== -->
     <div id="project-modal" class="modal-overlay">
-        <div class="modal-content glass-panel">
+        <div class="modal-content">
             <button id="close-modal" class="close-btn" aria-label="Cerrar">
                 <i class="fas fa-times"></i>
             </button>
@@ -338,7 +289,7 @@
     </button>
 
     <footer>
-        <p>© <span id="year"></span> Juan Stella · <span data-i18n="footer_text">Hecho con CSS Vanilla</span></p>
+        <p>© <span id="year"></span> Juan Stella</p>
     </footer>
 
     <script src="script.js"></script>
